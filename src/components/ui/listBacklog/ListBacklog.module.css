@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+}
+
+.mainContainer{
+    width: 100vw;
+    padding: 10px;
+}
+
+.tasksContainer {
+    display: flex;
+
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 50px;
+ 
+    padding: 10px;
+}
+
+.listContainer{
+    background: grey;
+    height: 80vh;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.taskCard{
+    display: flex;
+    width: 95%;
+    margin: 0 auto;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    height: 100px;
+    background-color: #D9D9D9;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.cardButtons{
+
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+}
