@@ -1,12 +1,14 @@
+import { Header } from "./components/ui/Header/Header"
+import { ListBacklog } from "./components/ui/ListBacklog/ListBacklog"
 
 
 function App() {
 
   return (
     <>
-      <ListBacklog/><div>
         <Header/>
-      </div>
+      <ListBacklog/>
+      
     </>
   )
 }
