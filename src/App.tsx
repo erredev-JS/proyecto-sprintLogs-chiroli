@@ -1,3 +1,4 @@
+import { Aside } from "./components/ui/Aside/Aside"
 
 
 function App() {
@@ -5,6 +6,8 @@ function App() {
   return (
     <>
       
+
+      <Aside></Aside>
     </>
   )
 }

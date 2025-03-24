@@ -1,0 +1,33 @@
+.asideMain{
+    background-color: blueviolet;
+    height: 85vh;
+    width: 40vw;
+    justify-content: center;
+}
+
+
+.asideMainContainer{
+
+    text-align: center;
+    
+    border: 1px solid;
+    justify-content: center;
+    background-color: antiquewhite;
+}
+
+.backlogButton{
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+
+}
+
+.headerAside{
+    border: 1px solid;
+
+    display: flex;
+    text-decoration: underline;
+    justify-content: center;
+    padding: 8px;
+    gap: 1rem;
+}
