@@ -1,0 +1,23 @@
+
+
+.cardContainer{
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 1rem;
+    box-shadow: 0 0 10px;
+    max-width: 30vw;
+}
+
+.dataContainer{
+    text-align: left;
+    
+}
+
+.buttonContainer{
+    display: flex;
+    justify-content: end;
+    padding-right: 8px;
+    gap: 8px;
+}
