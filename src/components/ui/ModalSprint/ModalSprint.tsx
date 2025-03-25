@@ -1,7 +1,12 @@
 import { Button } from 'react-bootstrap'
 import styles from './ModalSprint.module.css'
+import { FC } from 'react'
 
-const ModalSprint = () => {
+interface IModalSprint{
+    showModal : VoidFunction
+}
+
+const ModalSprint: FC<IModalSprint> = ({showModal}) => {
     return(
         <div className={styles.containerPrincipal}>
             <div className={styles.containerTitle}>  
@@ -15,7 +20,7 @@ const ModalSprint = () => {
                 </form>
             </div>
             <div className={styles.containerButtons}>
-                <Button variant='danger'>Cancelar</Button>
+                <Button variant='danger' onClick={showModal}>Cancelar</Button> 
                 <Button variant='success'>Aceptar</Button>
             </div>
         </div>
