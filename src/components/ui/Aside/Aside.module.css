@@ -1,8 +1,10 @@
 .asideMain{
-    background-color: blueviolet;
+    background-color: #eaeaea;
     height: 85vh;
-    width: 40vw;
+    width: 30vw;
     justify-content: center;
+    min-width: 220px;
+    max-width: 320px;
 }
 
 
@@ -10,9 +12,11 @@
 
     text-align: center;
     
-    border: 1px solid;
     justify-content: center;
-    background-color: antiquewhite;
+    background-color: #eaeaea;
+    border-radius: 12px;
+    padding: 20px;
+    height: 80vh;
 }
 
 .backlogButton{
@@ -21,13 +25,39 @@
     padding: 8px;
 
 }
-
-.headerAside{
-    border: 1px solid;
-
+.backlogButton button{
     display: flex;
-    text-decoration: underline;
     justify-content: center;
     padding: 8px;
+    background-color: #6B63D4;
+    border: none;
+    width: 70%;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.headerAside{
+   
+
+    display: flex;
+    justify-content: space-around;
     gap: 1rem;
+    align-items: center;
+    height: 50px;
+    width: 85%;
+    min-width: 180px;
+    margin: 20px auto;
+    border-bottom: 6px solid black;
+    padding: 2px;
+}
+
+.headerAside button{
+        background-color: #6B63D4;
+     border: none;
+}
+
+.headerAside h3{
+    font-size: 16px;
+    
 }

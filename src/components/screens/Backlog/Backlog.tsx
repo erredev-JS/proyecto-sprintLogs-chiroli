@@ -1,6 +1,11 @@
-import styles from './Backlog.module.css'
+import { ListBacklog } from "../../ui/ListBacklog/ListBacklog"
+
+
 export const Backlog = () => {
   return (
-    <div>Backlog</div>
+    
+    <>
+      <ListBacklog></ListBacklog>
+    </>
   )
 }

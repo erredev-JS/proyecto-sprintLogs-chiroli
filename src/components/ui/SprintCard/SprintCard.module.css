@@ -1,23 +1,50 @@
 
 
 .cardContainer{
-    border: 1px solid;
+   
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     padding: 1rem;
-    box-shadow: 0 0 10px;
-    max-width: 30vw;
+    box-shadow: 4px 4px 8px;
+    max-width: 280px;
+    border-radius: 12px;
+    background-color: #B2B2B2;
+    min-width: 191px;
 }
+
+.cardContainer:hover{
+    transform: scale(1.05);
+    transition: all 300ms ease;
+}
+
+.buttonContainer button{
+    background-color: #6B63D4;
+    border: none;
+}
+
+.buttonContainer button:last-child{
+    background-color: red;
+}
+
 
 .dataContainer{
     text-align: left;
+    font-size: 8px;
+    
+}
+
+.dataContainer h3{
+    font-size: 20px;
+    
+}
+.dataContainer h3{
+    font-size: 18px;
     
 }
 
 .buttonContainer{
     display: flex;
     justify-content: end;
-    padding-right: 8px;
     gap: 8px;
 }

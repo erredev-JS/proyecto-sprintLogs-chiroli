@@ -20,6 +20,8 @@ export const ListBacklog = () => {
             <p>Descripcion: estamos aca...</p>
 
             </div>
+            <div className={styles.buttonsResponsive}>
+
             <div className={styles.cardSend}>
             <Button variant='primary'>Enviar a 🏁</Button>
             </div>
@@ -27,6 +29,7 @@ export const ListBacklog = () => {
             <Button variant='primary'>👁</Button>
             <Button variant='primary'>✒</Button>
             <Button variant='danger'>❌</Button>
+            </div>
             </div>
         </div>
         <div className={styles.taskCard}>
@@ -35,6 +38,7 @@ export const ListBacklog = () => {
             <p>Descripcion: estamos aca...</p>
 
             </div>
+            <div className={styles.buttonsResponsive}>
             <div className={styles.cardSend}>
             <Button variant='primary'>Enviar a 🏁</Button>
             </div>
@@ -42,6 +46,7 @@ export const ListBacklog = () => {
             <Button variant='primary'>👁</Button>
             <Button variant='primary'>✒</Button>
             <Button variant='danger'>❌</Button>
+            </div>
             </div>
         </div>
     </div>

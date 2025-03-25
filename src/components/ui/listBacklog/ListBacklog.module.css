@@ -39,11 +39,36 @@
     background-color: #D9D9D9;
     border-radius: 8px;
     margin-top: 10px;
+ 
+}
+
+.buttonsResponsive{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width:50%;
+  
+    align-items: center;
 }
 
 .cardButtons{
-
-    width: 30%;
+   
+    width: 50%;
     display: flex;
     justify-content: space-between;
 }
+
+
+@media (max-width: 800px) {
+    .taskCard{
+        flex-direction: column;
+        height: 150px;
+    }
+    .buttonsResponsive{
+        display: flex;
+        width: 80%;
+        justify-content: space-around;
+    }
+   
+    
+  }
