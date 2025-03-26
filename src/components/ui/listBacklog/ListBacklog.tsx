@@ -34,6 +34,24 @@ export const ListBacklog = () => {
         </div>
         <div className={styles.taskCard}>
             <div className={styles.cardInfo}>
+            <p>Titulo: tarea1</p>
+            <p>Descripcion: estamos aca...</p>
+
+            </div>
+            <div className={styles.buttonsResponsive}>
+
+            <div className={styles.cardSend}>
+            <Button variant='primary'>Enviar a 🏁</Button>
+            </div>
+            <div className={styles.cardButtons}>
+            <Button variant='primary'>👁</Button>
+            <Button variant='primary'>✒</Button>
+            <Button variant='danger'>❌</Button>
+            </div>
+            </div>
+        </div>
+        <div className={styles.taskCard}>
+            <div className={styles.cardInfo}>
             <p>Titulo: tarea2</p>
             <p>Descripcion: estamos aca...</p>
 

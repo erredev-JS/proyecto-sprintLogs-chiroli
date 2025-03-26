@@ -5,27 +5,30 @@
 .mainContainer{
     width: 100vw;
     padding: 10px;
+    
+    height: 90vh;
 }
 
 .tasksContainer {
     display: flex;
-
+    
     width: 100%;
     justify-content: space-between;
     align-items: center;
-
+    
     height: 50px;
- 
     padding: 10px;
 }
 
 .listContainer{
     background: grey;
-    height: 80vh;
+    height: 80%;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    overflow: auto;
+    padding: 10px 0px;
 }
 
 .taskCard{
