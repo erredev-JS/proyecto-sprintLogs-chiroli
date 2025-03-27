@@ -1,4 +1,4 @@
-import { ISprint } from "./iSprints";
+import { ISprint } from "./ISprints";
 
 export interface ISprintList{
     sprints: ISprint[]

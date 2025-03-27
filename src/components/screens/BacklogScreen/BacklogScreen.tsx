@@ -1,7 +1,7 @@
 
 import { Aside } from "../../ui/Aside/Aside"
 import { Header } from "../../ui/Header/Header"
-import { ListBacklog } from "../../ui/ListBacklog/ListBacklog"
+import { ListBacklog } from "../../ui/listBacklog/ListBacklog"
 
 import ModalSprint from "../../ui/ModalSprint/ModalSprint"
 
@@ -11,7 +11,6 @@ import styles from './BacklogScreen.module.css'
 
 
 export const BacklogScreen = () => {
-  
 
   return (
     

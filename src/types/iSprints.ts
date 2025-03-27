@@ -1,9 +1,9 @@
-import { ITarea } from "./iTareas"
+import { ITareas } from "./ITareas"
 
 export interface ISprint {
     id: string,
     fechaInicio: string,
     fechaCierre: string,
     nombre: string
-    tareas: ITarea[]
+    tareas: ITareas[]
 }

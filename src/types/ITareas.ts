@@ -1,4 +1,4 @@
-export default interface ITareas {
+export interface ITareas {
     id: string,
     estado: string,
     titulo: string,

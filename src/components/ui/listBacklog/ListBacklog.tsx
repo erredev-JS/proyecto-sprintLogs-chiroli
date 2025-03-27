@@ -1,9 +1,29 @@
 import { Button } from 'react-bootstrap'
 import styles from './ListBacklog.module.css'
+import { useEffect, useState } from 'react';
+import { ITareas } from '../../../types/ITareas';
+import { getAllTareas } from '../../../http/crudTareas';
+import { TareaCard } from '../TareaCard/TareaCard';
 
 
 
 export const ListBacklog = () => {
+
+  //aqui se deberia setear el array de tareas en los estado globales
+  const [arrayTareas, setArrayTareas] = useState<ITareas[]>([]);
+
+  console.log(arrayTareas)
+  
+    useEffect(() => {
+      const traerTareasProvisional = async () => {
+        const tareas = await getAllTareas();
+        setArrayTareas(tareas ?? []);
+      }
+  
+      traerTareasProvisional();
+      
+    }, [])
+
   return (
     <>
     <div className={styles.mainContainer}>
@@ -14,7 +34,13 @@ export const ListBacklog = () => {
     </div>
     <div className={styles.listContainer}>
      
-        <div className={styles.taskCard}>
+        {arrayTareas.map((tarea) => (
+          <TareaCard key={tarea.id} tarea={tarea}></TareaCard>
+        ))}
+
+
+
+        {/* <div className={styles.taskCard}>
             <div className={styles.cardInfo}>
             <p>Titulo: tarea1</p>
             <p>Descripcion: estamos aca...</p>
@@ -66,7 +92,7 @@ export const ListBacklog = () => {
             <Button variant='danger'>❌</Button>
             </div>
             </div>
-        </div>
+        </div> */}
     </div>
     </div>
     </>
