@@ -1,12 +1,18 @@
 import { Button } from 'react-bootstrap'
 import styles from './ModalSprint.module.css'
-import { FC } from 'react'
+import { useStoreModal } from '../../../store/useStoreModal'
 
-interface IModalSprint{
-    showModal : VoidFunction
-}
 
-const ModalSprint: FC<IModalSprint> = ({showModal}) => {
+
+
+
+const ModalSprint = () => {
+
+    const {open, closeModal} = useStoreModal()
+
+    if (!open) return null // Si es falso no renderiza
+
+    
     return(
         <div className={styles.containerPrincipal}>
             <div className={styles.containerTitle}>  
@@ -20,7 +26,7 @@ const ModalSprint: FC<IModalSprint> = ({showModal}) => {
                 </form>
             </div>
             <div className={styles.containerButtons}>
-                <Button variant='danger' onClick={showModal}>Cancelar</Button> 
+                <Button variant='danger' onClick={closeModal}>Cancelar</Button> 
                 <Button variant='success'>Aceptar</Button>
             </div>
         </div>
