@@ -8,7 +8,7 @@ interface IStoreTareas {
     //agrego tarea activa (Thomy)
     tareaActiva: ITareas | null
 
-    tareasInactivas: ITareas[]
+    tareas: ITareas[]
     addTareaInactiva: (tarea: ITareas) => void
     editTarea: (tareaActualizada: ITareas) => void
     deleteTarea: (idTarea: string) => void
@@ -24,17 +24,17 @@ export const useStoreTareas = create<IStoreTareas>((set) => ({
     tareaActiva: null,
 
 
-    tareasInactivas: [] as ITareas[],
+    tareas: [] as ITareas[],
     addTareaInactiva: (tarea) => set((state) => ({
-        tareasInactivas: [...state.tareasInactivas, tarea]
+        tareas: [...state.tareas, tarea]
     })),
     editTarea: (tareaActualizada) => set((state) => {
-        const tareasInactivas =  state.tareasInactivas.map((tarea) => tarea.id === tareaActualizada.id ? {...tarea, ...tareaActualizada} : tarea)
-        return {tareasInactivas: tareasInactivas}
+        const tareasInactivas =  state.tareas.map((tarea) => tarea.id === tareaActualizada.id ? {...tarea, ...tareaActualizada} : tarea)
+        return {tareas: tareasInactivas}
     }),
 
     deleteTarea: (idTarea) => set((state) => ({
-        tareasInactivas : state.tareasInactivas.filter((tarea) => tarea.id !== idTarea)
+        tareas : state.tareas.filter((tarea) => tarea.id !== idTarea)
 
     })),
 
