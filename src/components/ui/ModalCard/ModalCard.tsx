@@ -17,7 +17,7 @@ export const ModalCard = () => {
     }
 
 
-    const {tareaActiva, editTarea} = useStoreTareas()
+    const {tareaActiva, editTarea, setTareaActiva} = useStoreTareas()
     const { openTask, closeModalTask} = useStoreModal()
     const [formValues, setFormValues] = useState<ITareas>(initialStateTarea);
 
@@ -47,6 +47,8 @@ export const ModalCard = () => {
             updateTareaController(formValues)
             editTarea(formValues)
         }
+        setTareaActiva(null)
+        closeModalTask()
     }
     
     return(
