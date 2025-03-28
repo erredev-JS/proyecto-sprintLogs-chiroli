@@ -5,7 +5,7 @@ import { ITareas } from "../types/ITareas";
 
 
 interface IStoreTareas {
-    //agrego tarea activa (Thomy)
+   
     tareaActiva: ITareas | null
 
     tareas: ITareas[]
@@ -13,14 +13,14 @@ interface IStoreTareas {
     editTarea: (tareaActualizada: ITareas) => void
     deleteTarea: (idTarea: string) => void
 
-    //setear tarea activa (Thomy)
+  
     setTareaActiva: (tarea: ITareas | null) => void
-    //arrayDeEstadoInicial
+   
 }
 
 
 export const useStoreTareas = create<IStoreTareas>((set) => ({
-    //tarea Activa (Thomy)
+   
     tareaActiva: null,
 
 
@@ -39,7 +39,7 @@ export const useStoreTareas = create<IStoreTareas>((set) => ({
     })),
 
 
-    //setear tarea activa (Thomy)
+    
     setTareaActiva: (tareaActivaIn) => set(() => ({ tareaActiva: tareaActivaIn}))
 }))
 
