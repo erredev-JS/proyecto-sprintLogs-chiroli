@@ -13,9 +13,9 @@ interface IStoreModal{
 export const useStoreModal = create<IStoreModal>((set) => ({
     openSprint : false,
     openTask : false,
-    openModalSprint : () => set({openSprint : true}), // Abre el modal de Sprints
+    openModalSprint : () => set({openSprint : true, openTask : false}), // Abre el modal de Sprints
     closeModalSprint : () => set({openSprint : false}), // Cierra el modal de Sprints
-    openModalTask : () => set({openTask : true}), // Abre modal de tareas
+    openModalTask : () => set({openTask : true , openSprint : false}), // Abre modal de tareas
     closeModalTask : () => set({openTask: false}) // Cierra modal de tareas
 }))
 
