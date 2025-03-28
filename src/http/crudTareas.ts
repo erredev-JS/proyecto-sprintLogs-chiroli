@@ -1,45 +1,17 @@
 import axios from "axios"
 import { ITareas } from "../types/ITareas"
+import { ITareaList } from "../types/ITareaList"
+import { URL_BACKLOG } from "../utils/constantes"
 
-const URL_LOCAL = "http://localhost:3000/backlog"
 
-
-export const getAllTareas = async () => {
+export const putTareaList = async (tareas: ITareas[]) => {
     try{
-        
-        const res = await axios.get<{tareas: ITareas[]}>(URL_LOCAL)
-        return res.data.tareas
-    }catch(error){
-        console.log("Hubo un error al traer las tareas en getAllTareas")
-    }
-}
-
-export const createTarea = async (tareaNueva: ITareas) => {
-    try{
-        //todavia no termino aca
-        //const tareasBd = await getAllTareas()
-
-        const response = await axios.post<ITareas>(URL_LOCAL, tareaNueva)
+        const response = await axios.put<ITareaList[]>(URL_BACKLOG, {tareas : tareas})
         return response.data
-    }catch(error){
-        console.log("Hubo un error al crear la tarea")
+    }catch (error){
+        console.log("Error en putTareaList ", error)
     }
 }
 
-export const updateTarea = async (tareaActualizada: ITareas) => {
-    try{
-        const response = await axios.put<ITareas>(URL_LOCAL, tareaActualizada)
-        return response.data
-    }catch(error){
-        console.log("Hubo un error al actualizar la tarea")
-    }
-}
 
-export const deleteTarea = async (idTarea: string) => {
-    try{
-        const response = await axios.delete(`${URL_LOCAL}/${idTarea}`)
-        return response.data
-    }catch(error){
-        console.log("Hubo un error al actualizar la tarea")
-    }
-}
+

@@ -1,10 +1,10 @@
 import { Button } from 'react-bootstrap'
 import styles from './ListBacklog.module.css'
-import { useEffect, useState } from 'react';
-import { ITareas } from '../../../types/ITareas';
-import { getAllTareas } from '../../../http/crudTareas';
+import { useEffect } from 'react';
 import { TareaCard } from '../TareaCard/TareaCard';
 import { useStoreModal } from '../../../store/useStoreModal';
+import { getAllTareasController } from '../../../data/tareaController';
+import useStoreTareas from '../../../store/useStoreTareas';
 
 
 
@@ -12,19 +12,22 @@ export const ListBacklog = () => {
 
 
   const {openModalTask} = useStoreModal()
+  const setTareas = useStoreTareas((state) => state.setTareas)
 
   //aqui se deberia setear el array de tareas en los estado globales
-  const [arrayTareas, setArrayTareas] = useState<ITareas[]>([]);
+  const {tareas} = useStoreTareas()
 
-  console.log(arrayTareas)
+  
+  console.log(tareas)
   
     useEffect(() => {
-      const traerTareasProvisional = async () => {
-        const tareas = await getAllTareas();
-        setArrayTareas(tareas ?? []);
+      
+      const firstGetTareas = async () => {
+        const tareas = await getAllTareasController();
+        setTareas(tareas ?? []);
       }
   
-      traerTareasProvisional();
+      firstGetTareas();
       
     }, [])
 
@@ -38,65 +41,10 @@ export const ListBacklog = () => {
     </div>
     <div className={styles.listContainer}>
      
-        {arrayTareas.map((tarea) => (
+        {tareas.map((tarea) => (
           <TareaCard key={tarea.id} tarea={tarea}></TareaCard>
         ))}
 
-
-
-        {/* <div className={styles.taskCard}>
-            <div className={styles.cardInfo}>
-            <p>Titulo: tarea1</p>
-            <p>Descripcion: estamos aca...</p>
-
-            </div>
-            <div className={styles.buttonsResponsive}>
-
-            <div className={styles.cardSend}>
-            <Button variant='primary'>Enviar a 🏁</Button>
-            </div>
-            <div className={styles.cardButtons}>
-            <Button variant='primary'>👁</Button>
-            <Button variant='primary'>✒</Button>
-            <Button variant='danger'>❌</Button>
-            </div>
-            </div>
-        </div>
-        <div className={styles.taskCard}>
-            <div className={styles.cardInfo}>
-            <p>Titulo: tarea1</p>
-            <p>Descripcion: estamos aca...</p>
-
-            </div>
-            <div className={styles.buttonsResponsive}>
-
-            <div className={styles.cardSend}>
-            <Button variant='primary'>Enviar a 🏁</Button>
-            </div>
-            <div className={styles.cardButtons}>
-            <Button variant='primary'>👁</Button>
-            <Button variant='primary'>✒</Button>
-            <Button variant='danger'>❌</Button>
-            </div>
-            </div>
-        </div>
-        <div className={styles.taskCard}>
-            <div className={styles.cardInfo}>
-            <p>Titulo: tarea2</p>
-            <p>Descripcion: estamos aca...</p>
-
-            </div>
-            <div className={styles.buttonsResponsive}>
-            <div className={styles.cardSend}>
-            <Button variant='primary'>Enviar a 🏁</Button>
-            </div>
-            <div className={styles.cardButtons}>
-            <Button variant='primary'>👁</Button>
-            <Button variant='primary'>✒</Button>
-            <Button variant='danger'>❌</Button>
-            </div>
-            </div>
-        </div> */}
     </div>
     </div>
     </>
