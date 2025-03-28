@@ -17,7 +17,13 @@ interface IStoreSprints {
     deleteSprint: (idSprint: string) => void
 
   
-    setSprintActiva: (tarea: ISprint | null) => void
+    setSprintActiva: (sprint: ISprint | null) => void
+    
+    // Tareas
+
+    addTareaAsignada: (tarea: ITareas) => void
+    deleteTareaAsignada: (idSprint: string) => void
+    editTareaAsignada: (tareaActualizada: ITareas) => void
    
 }
 
@@ -30,7 +36,9 @@ export const useStoreSprints = create<IStoreSprints>((set) => ({
     
     
     sprints: [] as ISprint[],
+
     tareasAsignadas: [] as ITareas[],
+
     addSprint: (sprint) => set((state) => ({
         sprints: [...state.sprints, sprint]
     })),
@@ -47,8 +55,27 @@ export const useStoreSprints = create<IStoreSprints>((set) => ({
     })),
 
 
+    setSprintActiva: (sprintActivaIn) => set(() => ({ sprintActiva: sprintActivaIn})),
+
+    // Tareas asignadas
+
+    addTareaAsignada: (tarea) => set((state) => ({
+        tareasAsignadas: [...state.tareasAsignadas, tarea]
+    })),
+
+    deleteTareaAsignada: (idTarea) => set((state) => ({
+        tareasAsignadas : state.tareasAsignadas.filter((tarea) => tarea.id !== idTarea)
+       
+    })),
+
+
+    editTareaAsignada: (tareaActualizada) => set((state) => {
+        const tareasAsignadas =  state.tareasAsignadas.map((tarea) => tarea.id === tareaActualizada.id ? {...tarea, ...tareaActualizada} : tarea)
+        return {tareasAsignadas: tareasAsignadas}
+    })
+
+
     
-    setSprintActiva: (sprintActivaIn) => set(() => ({ sprintActiva: sprintActivaIn}))
 }))
 
 
