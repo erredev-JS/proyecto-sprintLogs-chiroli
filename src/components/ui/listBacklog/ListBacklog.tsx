@@ -4,10 +4,14 @@ import { useEffect, useState } from 'react';
 import { ITareas } from '../../../types/ITareas';
 import { getAllTareas } from '../../../http/crudTareas';
 import { TareaCard } from '../TareaCard/TareaCard';
+import { useStoreModal } from '../../../store/useStoreModal';
 
 
 
 export const ListBacklog = () => {
+
+
+  const {openModalTask} = useStoreModal()
 
   //aqui se deberia setear el array de tareas en los estado globales
   const [arrayTareas, setArrayTareas] = useState<ITareas[]>([]);
@@ -30,7 +34,7 @@ export const ListBacklog = () => {
     <h1>Backlog</h1>
     <div className={styles.tasksContainer}>
     <p>Tareas en el backlog</p>
-    <Button variant="primary">Crear tarea</Button>
+    <Button variant="primary" onClick={openModalTask}>Crear tarea</Button>
     </div>
     <div className={styles.listContainer}>
      
