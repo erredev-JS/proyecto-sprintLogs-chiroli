@@ -7,6 +7,7 @@ import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import useStoreTareas from '../../../store/useStoreTareas'
 import { createTareaController, updateTareaController } from '../../../data/tareaController'
 
+
 export const ModalCard = () => {
     const initialStateTarea: ITareas = {
         id: "",
@@ -53,6 +54,7 @@ export const ModalCard = () => {
         setTareaActiva(null)
         closeModalTask()
     }
+    
     
     return(
         <div className={styles.containerPrincipal}>

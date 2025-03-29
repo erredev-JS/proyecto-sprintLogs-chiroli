@@ -1,0 +1,53 @@
+
+.containerPrincipal{
+    width: 90vw;
+    padding: 0;
+    margin: 0;
+}
+.containerTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    
+}
+.containerButton{
+    padding-left: 5vw ;
+}
+.containercontentFlex{
+    height: 80vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+}
+.containerContentTasks{
+    width: 25vw;
+    padding: 10px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.containerTasks{
+    width: 90%;
+    height: 100%;
+    background-color: rgb(198, 197, 197);
+    border-radius: 10px;
+    box-shadow: 2px 5px 15px;
+} 
+
+@media (max-width: 800px) {
+    .containercontentFlex {
+        display: flex;
+        flex-direction: column;
+        
+         
+    }
+    .containerContentTasks{
+        width: 100%;
+        align-items: start;
+        height: 30vh;
+    }
+
+    
+}

@@ -8,11 +8,10 @@ import { useStoreModal } from '../../../store/useStoreModal'
 
 const ModalSprint = () => {
 
-    const {openSprint, closeModalSprint} = useStoreModal()
+    let {openSprint, closeModalSprint} = useStoreModal()
 
     if (!openSprint) return null // Si es falso no renderiza
-
-    
+  
     return(
         <div className={styles.containerPrincipal}>
             <div className={styles.containerTitle}>  
