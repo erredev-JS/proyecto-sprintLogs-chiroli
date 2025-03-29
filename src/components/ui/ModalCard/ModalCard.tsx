@@ -5,7 +5,7 @@ import { useStoreModal } from '../../../store/useStoreModal'
 import { ITareas } from '../../../types/ITareas'
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import useStoreTareas from '../../../store/useStoreTareas'
-import { updateTareaController } from '../../../data/tareaController'
+import { createTareaController, updateTareaController } from '../../../data/tareaController'
 
 export const ModalCard = () => {
     const initialStateTarea: ITareas = {
@@ -17,7 +17,7 @@ export const ModalCard = () => {
     }
 
 
-    const {tareaActiva, editTarea, setTareaActiva} = useStoreTareas()
+    const {tareaActiva, editTarea, setTareaActiva, addTareaInactiva} = useStoreTareas()
     const { openTask, closeModalTask} = useStoreModal()
     const [formValues, setFormValues] = useState<ITareas>(initialStateTarea);
 
@@ -42,10 +42,13 @@ export const ModalCard = () => {
         e.preventDefault();
 
         if(!tareaActiva){
-
+            formValues.id = Date.now().toString()
+            createTareaController(formValues)
+            addTareaInactiva(formValues)
         }else{
             updateTareaController(formValues)
             editTarea(formValues)
+            
         }
         setTareaActiva(null)
         closeModalTask()

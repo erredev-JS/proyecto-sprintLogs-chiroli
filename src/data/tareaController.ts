@@ -2,6 +2,7 @@ import axios from "axios"
 import { ITareas } from "../types/ITareas"
 import { URL_BACKLOG } from "../utils/constantes"
 import { putTareaList } from "../http/crudTareas"
+import Swal from "sweetalert2"
 
 
 
@@ -45,6 +46,11 @@ export const updateTareaController = async (tareaActualizada: ITareas) => {
             )
 
             await putTareaList(result)
+            Swal.fire({
+                title: "Tarea actualizada!",
+                text: "",
+                icon: "success"
+              });
         }
         
     }catch(error){
