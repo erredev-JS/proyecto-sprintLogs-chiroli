@@ -1,14 +1,14 @@
 import { Button } from "react-bootstrap"
 import styles from "./listSprint.module.css"
-import useStoreTareas from "../../../store/useStoreTareas"
+ import useStoreTareas from "../../../store/useStoreTareas"
 import { useStoreModal } from "../../../store/useStoreModal"
+
 
 export const ListSprint = () => {
 
     const {openModalTask} = useStoreModal()
     const {tareas} = useStoreTareas()
 
-    
 
     return (
         <div className={styles.containerPrincipal}>
