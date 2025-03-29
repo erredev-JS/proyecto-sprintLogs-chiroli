@@ -53,7 +53,6 @@ export const ModalCard = () => {
     }
     
     
-    
     return(
         <div className={styles.containerPrincipal}>
             <div className={styles.containerTitle}>  
