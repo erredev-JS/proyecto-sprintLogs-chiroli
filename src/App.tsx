@@ -8,8 +8,8 @@ function App() {
 
   return (
     <>
-    <BacklogScreen></BacklogScreen>
-    {/* <SprintScreen/> */}
+    <BacklogScreen></BacklogScreen> 
+    <SprintScreen/> 
     </>
   )
 }
