@@ -50,7 +50,7 @@ export const updateTareaController = async (tareaActualizada: ITareas) => {
                 title: "Tarea actualizada!",
                 text: "",
                 icon: "success"
-              });
+            });
         }
         
     }catch(error){
