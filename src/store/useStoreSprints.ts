@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { ISprint } from "../types/ISprints";
+import { ITareas } from "../types/ITareas";
 
 
 interface IStoreSprints {
@@ -12,6 +13,15 @@ interface IStoreSprints {
   deleteSprint: (idSprint: string) => void;
 
   setSprintActiva: (sprint: ISprint | null) => void;
+
+
+
+  /// Añadir tarea a una sprint
+
+
+  addTaskToSprint: (tarea: ITareas, idSprint: string) => void
+  deleteTaskSprint: (idTarea: string, idSprint: string) => void
+  editTaskSprint: (tareaActualizada: ITareas, idSprint: string) => void
 
 
 }
@@ -40,8 +50,36 @@ export const useStoreSprints = create<IStoreSprints>((set) => ({
 
   setSprintActiva: (sprintActivaIn) => set(() => ({ sprintActiva: sprintActivaIn })),
 
+  addTaskToSprint: (tarea, idSprint) => set((state) => ({
+    sprints: state.sprints.map((sprint) => sprint.id === idSprint ? {...sprint, tareas: [...sprint.tareas, tarea] } : sprint)
+  })),
+  deleteTaskSprint: (idTarea, idSprint) => set((state) => ({
+    sprints: state.sprints.map((sprint) => 
+      sprint.id === idSprint 
+        ? { ...sprint, tareas: sprint.tareas.filter((tarea) => tarea.id !== idTarea) } 
+        : sprint
+    )
+  })),
 
-
+  editTaskSprint: (tareaActualizada, idSprint) => set((state) => ({
+    sprints: state.sprints.map((sprint) => 
+      sprint.id === idSprint 
+        ? { 
+            ...sprint, 
+            tareas: sprint.tareas.map((tarea) => 
+              tarea.id === tareaActualizada.id ? { ...tarea, ...tareaActualizada } : tarea
+            ) 
+          } 
+        : sprint
+    )
+  }))
+  
+  
 }));
 
 export default useStoreSprints;
+
+
+
+
+// sprint.tareas.map((tarea) => tarea.state === 'en_proceso')
