@@ -9,7 +9,7 @@ function App() {
   return (
     <>
     <BacklogScreen></BacklogScreen> 
-    <SprintScreen/> 
+    {/* <SprintScreen/>  */}
     </>
   )
 }

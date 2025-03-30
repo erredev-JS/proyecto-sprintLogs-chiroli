@@ -1,8 +1,8 @@
 import { Button } from "react-bootstrap"
 import styles from "./listSprint.module.css"
- import useStoreTareas from "../../../store/useStoreTareas"
+ 
 import { useStoreModal } from "../../../store/useStoreModal"
-import { TareaCard } from "../TareaCard/TareaCard"
+
 import useStoreSprints from "../../../store/useStoreSprints"
 
 
@@ -29,9 +29,10 @@ export const ListSprint = () => {
                 <div className={styles.containerContentTasks}>
                     <h6>Tareas Pendientes : 1</h6>
                     <div className={styles.containerTasks}>                       
-                        {sprints.map((sprint) => (
-                            sprint.tareas.map((task) => (
-                                task.titulo
+                        {sprints.map(sprints => (
+                            sprints.tareas.map(task => (
+                                task.estado.toLocaleLowerCase() === 'pendiente' &&
+                                <p>{task.titulo}</p>
                             ))
                         ))}
                     </div>
@@ -41,9 +42,10 @@ export const ListSprint = () => {
                     
                     <h6>Tareas en Progreso : 1</h6>
                     <div className={styles.containerTasks}>
-                        {sprints.map((sprint) => (
-                            sprint.tareas.map((task) => (
-                                task.titulo
+                        {sprints.map(sprints => (
+                            sprints.tareas.map(task => (
+                                task.estado.toLocaleLowerCase() === 'en progreso' &&
+                                <p>{task.titulo}</p>
                             ))
                         ))}
                     </div>
@@ -52,11 +54,12 @@ export const ListSprint = () => {
                 <div className={styles.containerContentTasks}>
                     <h6>Tareas Finalizadas : 1</h6>
                     <div className={styles.containerTasks}>
-                    {sprints.map(sprints => (
-                        sprints.tareas.map(task => (
-                            task.
-                        ))
-                    ))}
+                        {sprints.map(sprints => (
+                            sprints.tareas.map(task => (
+                                task.estado.toLocaleLowerCase() === 'finalizado' &&
+                                <p>{task.titulo}</p>
+                            ))
+                        ))}
                     </div>  
                 </div>
 
