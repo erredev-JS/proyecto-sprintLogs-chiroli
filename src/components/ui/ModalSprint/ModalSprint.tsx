@@ -13,6 +13,8 @@ const ModalSprint = () => {
     if (!openSprint) return null // Si es falso no renderiza
   
     return(
+        <div className={styles.backgroundFilter}>
+
         <div className={styles.containerPrincipal}>
             <div className={styles.containerTitle}>  
                 <h2>Crear Sprint</h2>
@@ -28,6 +30,7 @@ const ModalSprint = () => {
                 <Button variant='danger' onClick={closeModalSprint}>Cancelar</Button> 
                 <Button variant='success'>Aceptar</Button>
             </div>
+        </div>
         </div>
     )
 }

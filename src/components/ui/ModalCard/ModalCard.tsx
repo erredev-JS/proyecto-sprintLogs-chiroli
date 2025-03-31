@@ -57,6 +57,8 @@ export const ModalCard = () => {
     
     
     return(
+        <div className={styles.backgroundFilter}>
+
         <div className={styles.containerPrincipal}>
             <div className={styles.containerTitle}>  
                 <h2>{tareaActiva? "Editar Tarea" : "Crear Tarea"}</h2>
@@ -79,6 +81,7 @@ export const ModalCard = () => {
                 </form>
             </div>
         </div>
+                    </div>
     )
 }
 
