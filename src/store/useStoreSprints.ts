@@ -24,6 +24,9 @@ interface IStoreSprints {
   editTaskSprint: (tareaActualizada: ITareas, idSprint: string) => void
 
 
+
+  //
+  setSprints : (sprints : ISprint[]) => void
 }
 
 export const useStoreSprints = create<IStoreSprints>((set) => ({
@@ -72,9 +75,11 @@ export const useStoreSprints = create<IStoreSprints>((set) => ({
           } 
         : sprint
     )
+  })),
+  
+  setSprints : (sprintsIn) => set(() => ({
+    sprints : sprintsIn
   }))
-  
-  
 }));
 
 export default useStoreSprints;

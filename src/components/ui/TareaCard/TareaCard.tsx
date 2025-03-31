@@ -17,7 +17,7 @@ type ITareaCard = {
 
 export const TareaCard: FC<ITareaCard> = ({tarea}) => {
 
-  const {openModalTask} = useStoreModal()
+  const {openModalTask, openModalViewTask} = useStoreModal()
 
   const {deleteTarea} = useStoreTareas()
 
@@ -26,6 +26,10 @@ export const TareaCard: FC<ITareaCard> = ({tarea}) => {
   const handleOpenModalTareaEdit = (tarea: ITareas)=> {
     setTareaActiva(tarea)
     openModalTask()
+  }
+  const handleOpenModalView = (tarea: ITareas)=> {
+    setTareaActiva(tarea)
+    openModalViewTask()
   }
 
   const handleDeleteTarea = () => {
@@ -81,7 +85,7 @@ swalWithBootstrapButtons.fire({
             <Button  style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }} className={styles.btnCustom}>Enviar a 🏁</Button>
             </div>
             <div className={styles.cardButtons}>
-            <Button  style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }}  className={styles.btnCustom}><img src={viewIcon} /></Button>
+            <Button onClick={() => handleOpenModalView(tarea)} style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }}  className={styles.btnCustom}><img src={viewIcon} /></Button>
             <Button  style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }} onClick={()=>handleOpenModalTareaEdit(tarea)}  className={styles.btnCustom}><img src={editIcon} /></Button>
             <Button variant='danger' onClick={handleDeleteTarea} className={styles.btnCustomDelete}> <img src={deleteIcon}  /></Button>
             </div>

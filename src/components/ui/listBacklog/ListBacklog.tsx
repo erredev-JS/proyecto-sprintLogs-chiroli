@@ -6,6 +6,8 @@ import { useStoreModal } from '../../../store/useStoreModal';
 import { getAllTareasController } from '../../../data/tareaController';
 import useStoreTareas from '../../../store/useStoreTareas';
 import { getAllSprintsController } from '../../../data/sprintController';
+import useStoreSprints from '../../../store/useStoreSprints';
+
 
 
 
@@ -19,6 +21,8 @@ export const ListBacklog = () => {
   const setTareas = useStoreTareas((state) => state.setTareas)
 
   const {tareas} = useStoreTareas()
+
+  const {setSprints} = useStoreSprints()
 
   
   
@@ -34,7 +38,10 @@ export const ListBacklog = () => {
       //borrar esta funcion cuando se aplique la 2da screen
       const getSprintProvisional = async () => {
         const sprints = await getAllSprintsController()
-        console.log(sprints)
+        setSprints(sprints ?? [])
+        console.log(sprints);
+        
+        
       }
       getSprintProvisional()
       
@@ -57,6 +64,9 @@ export const ListBacklog = () => {
         ))}
 
     </div>
+
+      
+    
     </div>
     </>
 

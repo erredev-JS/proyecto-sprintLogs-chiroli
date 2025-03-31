@@ -39,6 +39,11 @@ export const ModalCard = () => {
         setFormValues((prev)=>({...prev, [`${name}`]:value,}))
     }
 
+    const handleCloseModalTask = () => {
+        setTareaActiva(null)
+        closeModalTask()
+    }
+
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
 
@@ -75,7 +80,7 @@ export const ModalCard = () => {
 
                     
                     <div className={styles.containerButtons}>
-                        <Button variant='danger' onClick={closeModalTask}>Cancelar</Button> 
+                        <Button variant='danger' onClick={handleCloseModalTask}>Cancelar</Button> 
                         <Button type='submit' variant='success'>Aceptar</Button>
                     </div>
                 </form>
