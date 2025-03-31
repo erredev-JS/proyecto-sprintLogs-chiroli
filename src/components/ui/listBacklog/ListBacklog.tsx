@@ -48,7 +48,7 @@ export const ListBacklog = () => {
     <h1>Backlog</h1>
     <div className={styles.tasksContainer}>
     <p>Tareas en el backlog</p>
-    <Button variant="primary" onClick={openModalTask}>Crear tarea</Button>
+    <Button variant="primary" className={styles.btnCustom} onClick={openModalTask}>Crear tarea</Button>
     </div>
     <div className={styles.listContainer}>
      
