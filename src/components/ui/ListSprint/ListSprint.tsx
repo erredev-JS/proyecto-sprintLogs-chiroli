@@ -5,14 +5,21 @@ import { useStoreModal } from "../../../store/useStoreModal"
 
 import useStoreSprints from "../../../store/useStoreSprints"
 
+import { useEffect } from "react"
+
 
 
 export const ListSprint = () => {
 
-    const {sprints} = useStoreSprints()
+    const {sprints, setSprintActiva, sprintActiva} = useStoreSprints()
     const {openModalTask} = useStoreModal()
     
-
+    
+    useEffect(()=>{
+        setSprintActiva(sprints[0])
+        console.log(sprintActiva);
+        
+    },[sprintActiva])
 
     return (
         <div className={styles.containerPrincipal}>
@@ -29,11 +36,9 @@ export const ListSprint = () => {
                 <div className={styles.containerContentTasks}>
                     <h6>Tareas Pendientes : 1</h6>
                     <div className={styles.containerTasks}>                       
-                        {sprints.map(sprints => (
-                            sprints.tareas.map(task => (
-                                task.estado.toLocaleLowerCase() === 'pendiente' &&
-                                <p>{task.titulo}</p>
-                            ))
+                    {sprintActiva?.tareas.map(task => (
+                            task.estado === 'pendiente' &&
+                            <p>{task.titulo}</p>
                         ))}
                     </div>
                 </div>
@@ -42,11 +47,9 @@ export const ListSprint = () => {
                     
                     <h6>Tareas en Progreso : 1</h6>
                     <div className={styles.containerTasks}>
-                        {sprints.map(sprints => (
-                            sprints.tareas.map(task => (
-                                task.estado.toLocaleLowerCase() === 'en progreso' &&
-                                <p>{task.titulo}</p>
-                            ))
+                    {sprintActiva?.tareas.map(task => (
+                            task.estado === 'en progreso' &&
+                            <p>{task.titulo}</p>
                         ))}
                     </div>
                 </div>
@@ -54,11 +57,9 @@ export const ListSprint = () => {
                 <div className={styles.containerContentTasks}>
                     <h6>Tareas Finalizadas : 1</h6>
                     <div className={styles.containerTasks}>
-                        {sprints.map(sprints => (
-                            sprints.tareas.map(task => (
-                                task.estado.toLocaleLowerCase() === 'finalizado' &&
-                                <p>{task.titulo}</p>
-                            ))
+                        {sprintActiva?.tareas.map(task => (
+                            task.estado === 'finalizada' &&
+                            <p>{task.titulo}</p>
                         ))}
                     </div>  
                 </div>

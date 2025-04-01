@@ -6,6 +6,11 @@ import { useStoreModal } from "../../../store/useStoreModal"
 import useStoreTareas from "../../../store/useStoreTareas"
 import Swal from "sweetalert2"
 import { deleteTareaController } from "../../../data/tareaController"
+import viewIcon from '../../../assets/viewIcon.svg'
+import editIcon from '../../../assets/editIcon.svg'
+import deleteIcon from '../../../assets/deleteIcon.svg'
+
+
 
 type ITareaCard = {
     tarea: ITareas
@@ -13,7 +18,7 @@ type ITareaCard = {
 
 export const TareaCard: FC<ITareaCard> = ({tarea}) => {
 
-  const {openModalTask} = useStoreModal()
+  const {openModalTask, openModalViewTask} = useStoreModal()
 
   const {deleteTarea} = useStoreTareas()
 
@@ -23,6 +28,11 @@ export const TareaCard: FC<ITareaCard> = ({tarea}) => {
     setTareaActiva(tarea)
     openModalTask()
   }
+  const handleOpenModalView = (tarea: ITareas)=> {
+    setTareaActiva(tarea)
+    openModalViewTask()
+  }
+
 
   const handleDeleteTarea = () => {
     const swalWithBootstrapButtons = Swal.mixin({
@@ -74,12 +84,12 @@ swalWithBootstrapButtons.fire({
             <div className={styles.buttonsResponsive}>
 
             <div className={styles.cardSend}>
-            <Button variant='primary'>Enviar a 🏁</Button>
+            <Button  style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }} className={styles.btnCustom}>Enviar a 🏁</Button>
             </div>
             <div className={styles.cardButtons}>
-            <Button variant='primary'>👁</Button>
-            <Button variant='primary' onClick={()=>handleOpenModalTareaEdit(tarea)}>✒</Button>
-            <Button variant='danger' onClick={handleDeleteTarea}>❌</Button>
+            <Button onClick={() => handleOpenModalView(tarea)} style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }}  className={styles.btnCustom}><img src={viewIcon} /></Button>
+            <Button  style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }} onClick={()=>handleOpenModalTareaEdit(tarea)}  className={styles.btnCustom}><img src={editIcon} /></Button>
+            <Button variant='danger' onClick={handleDeleteTarea} className={styles.btnCustomDelete}> <img src={deleteIcon}  /></Button>
             </div>
             </div>
         </div>

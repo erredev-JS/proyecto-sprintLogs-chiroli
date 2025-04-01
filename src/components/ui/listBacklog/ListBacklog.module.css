@@ -2,6 +2,8 @@
     box-sizing: border-box;
 }
 
+
+
 .mainContainer{
     width: 100vw;
     padding: 10px;
@@ -74,4 +76,22 @@
     }
    
     
+  }
+
+  .btnCustom {
+    background-color: #6B63D4 !important;
+    border: none !important;
+    outline: none !important; /* Evita el borde al hacer clic */
+    box-shadow: none !important; /* Evita el resaltado al enfocar */
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btnCustom:hover{
+    background-color:  #3d3877!important;
+    scale: 1.1;
+    outline: 2px solid #6B63D4 !important;
+  
   }
