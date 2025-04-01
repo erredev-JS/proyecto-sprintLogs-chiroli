@@ -34,18 +34,18 @@ export const useStoreSprints = create<IStoreSprints>((set) => ({
 
   addSprint: (sprint) =>
     set((state) => ({
-      sprints: [...state.sprints, sprint],
+        sprints: [...state.sprints, sprint],
     })),
 
   editSprint: (sprintActualizada) =>
     set((state) => {
-      const arraySprints = state.sprints.map((sprint) => (sprint.id === sprintActualizada.id ? { ...sprint, ...sprintActualizada } : sprint));
-      return { sprints: arraySprints };
+        const arraySprints = state.sprints.map((sprint) => (sprint.id === sprintActualizada.id ? { ...sprint, ...sprintActualizada } : sprint));
+        return { sprints: arraySprints };
     }),
 
   deleteSprint: (idSprint) =>
     set((state) => ({
-      sprints: state.sprints.filter((sprint) => sprint.id !== idSprint),
+        sprints: state.sprints.filter((sprint) => sprint.id !== idSprint),
     })),
 
   setSprintActiva: (sprintActivaIn) => set(() => ({ sprintActiva: sprintActivaIn })),
@@ -63,13 +63,13 @@ export const useStoreSprints = create<IStoreSprints>((set) => ({
 
   editTaskSprint: (tareaActualizada, idSprint) => set((state) => ({
     sprints: state.sprints.map((sprint) => 
-      sprint.id === idSprint 
+        sprint.id === idSprint 
         ? { 
             ...sprint, 
             tareas: sprint.tareas.map((tarea) => 
-              tarea.id === tareaActualizada.id ? { ...tarea, ...tareaActualizada } : tarea
+                tarea.id === tareaActualizada.id ? { ...tarea, ...tareaActualizada } : tarea
             ) 
-          } 
+        } 
         : sprint
     )
   }))
