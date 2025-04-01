@@ -5,6 +5,7 @@ import { useStoreModal } from '../../../store/useStoreModal'
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import useStoreSprints from '../../../store/useStoreSprints'
+import { getAllSprintsController } from '../../../data/sprintController'
 
 
 
@@ -12,9 +13,19 @@ import useStoreSprints from '../../../store/useStoreSprints'
 export const Aside = () => {
 
     const { openModalSprint } = useStoreModal()
-    const {} = useStoreSprints()
+    const {setSprints} = useStoreSprints()
 
     useEffect(()=>{
+
+        const firstGetSprints = async () => {
+            const response = await getAllSprintsController()
+            setSprints(response ?? [])
+            console.log(response);
+            
+        }
+
+
+        firstGetSprints()
 
     }, [])
 
