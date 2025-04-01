@@ -4,9 +4,9 @@ import viewIcon from '../../../assets/viewIcon.svg'
 import editIcon from '../../../assets/editIcon.svg'
 import deleteIcon from '../../../assets/deleteIcon.svg'
 import { useNavigate } from 'react-router-dom'
-import { ISprint } from '../../../types/ISprints'
 import { FC } from 'react'
 import useStoreSprints from '../../../store/useStoreSprints'
+import { ISprint } from '../../../types/ISprints'
 
 
 type ISprintCard = {
@@ -19,17 +19,17 @@ export const SprintCard: FC<ISprintCard> = ({sprintIn}) => {
 
     const navigate = useNavigate();
     const handleClick = () => {
-      navigate("/sprintScreen");
       setSprintActiva(sprintIn)
+      navigate("/sprintScreen");
     };
 
   return (
 
     <div>
-        <div className={styles.cardContainer} onClick={handleClick}>
+        <div className={styles.cardContainer}>
 
         <div className={styles.dataContainer}>
-        <h2>{sprintIn.nombre}</h2>
+        <h2 onClick={handleClick}>{sprintIn.nombre}</h2>
         <h3>Inicio: {sprintIn.fechaInicio}</h3>
         <h3>Cierre: {sprintIn.fechaCierre}</h3>
         <div className={styles.buttonContainer}>
