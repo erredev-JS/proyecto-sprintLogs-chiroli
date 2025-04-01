@@ -1,20 +1,13 @@
+import { BrowserRouter as Router } from "react-router-dom";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { BacklogScreen } from './components/screens/BacklogScreen/BacklogScreen'
-import { SprintScreen } from './components/screens/SprintScreen/SprintScreen'
-
-
+ import {AppRoutes} from './routes/AppRoutes'
 
 function App() {
-
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<BacklogScreen />} />
-        <Route path="/sprintScreen" element={<SprintScreen />} />
-      </Routes>
-    </>
-  )
+    <Router>
+      <AppRoutes />
+    </Router>
+  );
 }
 
-export default App
+export default App;

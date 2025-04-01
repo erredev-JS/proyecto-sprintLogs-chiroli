@@ -2,6 +2,7 @@ import { Button } from 'react-bootstrap'
 import styles from './Aside.module.css'
 import { SprintCard } from '../SprintCard/SprintCard'
 import { useStoreModal } from '../../../store/useStoreModal'
+import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import useStoreSprints from '../../../store/useStoreSprints'
 
@@ -17,13 +18,17 @@ export const Aside = () => {
 
     }, [])
 
-
+    const navigate = useNavigate();
+    const handleClick = () => {
+      navigate("/");
+    };
+    
 
   return (
     <>
     <div className={styles.asideMain}>
         <div className={styles.backlogButton}>
-                <Button className={styles.btnCustom}>Backlog</Button>
+                <Button className={styles.btnCustom} onClick={handleClick}>Backlog</Button>
             </div>
             <div className={styles.asideMainContainer}>
                 <div className={styles.headerAside}>
