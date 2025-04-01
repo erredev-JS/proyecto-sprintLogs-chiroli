@@ -11,6 +11,7 @@ import editIcon from '../../../assets/editIcon.svg'
 import deleteIcon from '../../../assets/deleteIcon.svg'
 
 
+
 type ITareaCard = {
     tarea: ITareas
 }
@@ -31,6 +32,7 @@ export const TareaCard: FC<ITareaCard> = ({tarea}) => {
     setTareaActiva(tarea)
     openModalViewTask()
   }
+
 
   const handleDeleteTarea = () => {
     const swalWithBootstrapButtons = Swal.mixin({

@@ -1,4 +1,5 @@
 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { BacklogScreen } from './components/screens/BacklogScreen/BacklogScreen'
 import { SprintScreen } from './components/screens/SprintScreen/SprintScreen'
 
@@ -8,8 +9,10 @@ function App() {
 
   return (
     <>
-      <BacklogScreen></BacklogScreen> 
-      <SprintScreen/>  
+      <Routes>
+        <Route path="/" element={<BacklogScreen />} />
+        <Route path="/sprintScreen" element={<SprintScreen />} />
+      </Routes>
     </>
   )
 }

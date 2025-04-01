@@ -3,6 +3,7 @@ import styles from './SprintCard.module.css'
 import viewIcon from '../../../assets/viewIcon.svg'
 import editIcon from '../../../assets/editIcon.svg'
 import deleteIcon from '../../../assets/deleteIcon.svg'
+import { useNavigate } from 'react-router-dom'
 
 export const SprintCard = () => {
 
@@ -13,10 +14,15 @@ export const SprintCard = () => {
         endDate: "2023-01-31",
     }
 
+    const navigate = useNavigate();
+    const handleClick = () => {
+      navigate("/sprintScreen");
+    };
+
   return (
 
     <div>
-        <div className={styles.cardContainer}>
+        <div className={styles.cardContainer} onClick={handleClick}>
 
         <div className={styles.dataContainer}>
         <h2>{sprintEjample.name}</h2>

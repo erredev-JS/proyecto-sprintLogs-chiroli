@@ -1,10 +1,16 @@
+import { useNavigate } from 'react-router-dom';
 import styles from './Header.module.css'
 
 
 export const Header = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/");
+  };
+  
   return (
     <div className={styles.containerHeader}>
-      <h1>AdminTareas</h1>
+      <h1 onClick={handleClick}>AdminTareas</h1>
     </div>
   )
 }
