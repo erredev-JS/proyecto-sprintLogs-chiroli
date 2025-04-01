@@ -2,6 +2,8 @@ import { Button } from 'react-bootstrap'
 import styles from './Aside.module.css'
 import { SprintCard } from '../SprintCard/SprintCard'
 import { useStoreModal } from '../../../store/useStoreModal'
+import { useEffect } from 'react'
+import useStoreSprints from '../../../store/useStoreSprints'
 
 
 
@@ -9,6 +11,11 @@ import { useStoreModal } from '../../../store/useStoreModal'
 export const Aside = () => {
 
     const { openModalSprint } = useStoreModal()
+    const {} = useStoreSprints()
+
+    useEffect(()=>{
+
+    }, [])
 
 
 
