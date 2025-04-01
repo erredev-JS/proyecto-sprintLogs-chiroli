@@ -35,15 +35,6 @@ export const ListBacklog = () => {
         console.log(tareas)
       }
 
-      //borrar esta funcion cuando se aplique la 2da screen
-      const getSprintProvisional = async () => {
-        const sprints = await getAllSprintsController()
-        setSprints(sprints ?? [])
-        console.log(sprints);
-        
-        
-      }
-      getSprintProvisional()
       
       firstGetTareas();
       

@@ -13,7 +13,7 @@ import { getAllSprintsController } from '../../../data/sprintController'
 export const Aside = () => {
 
     const { openModalSprint } = useStoreModal()
-    const {setSprints} = useStoreSprints()
+    const {setSprints, sprints, setSprintActiva} = useStoreSprints()
 
     useEffect(()=>{
 
@@ -31,7 +31,8 @@ export const Aside = () => {
 
     const navigate = useNavigate();
     const handleClick = () => {
-      navigate("/");
+    navigate("/");
+    setSprintActiva(null)
     };
     
 
@@ -50,7 +51,7 @@ export const Aside = () => {
                 </div>
 
                 <div className={styles.cardContainer}>
-                    <SprintCard></SprintCard>
+                    {sprints.map((sprint) => <SprintCard key={sprint.id} sprintIn={sprint} />)}
                 </div>
             </div>
     </div>

@@ -4,19 +4,23 @@ import viewIcon from '../../../assets/viewIcon.svg'
 import editIcon from '../../../assets/editIcon.svg'
 import deleteIcon from '../../../assets/deleteIcon.svg'
 import { useNavigate } from 'react-router-dom'
+import { ISprint } from '../../../types/ISprints'
+import { FC } from 'react'
+import useStoreSprints from '../../../store/useStoreSprints'
 
-export const SprintCard = () => {
 
-    const sprintEjample = {
-        id: 1,
-        name: "Sprint 1",
-        startDate: "2023-01-01",
-        endDate: "2023-01-31",
-    }
+type ISprintCard = {
+    sprintIn: ISprint
+}
+
+export const SprintCard: FC<ISprintCard> = ({sprintIn}) => {
+
+    const {setSprintActiva} = useStoreSprints()
 
     const navigate = useNavigate();
     const handleClick = () => {
       navigate("/sprintScreen");
+      setSprintActiva(sprintIn)
     };
 
   return (
@@ -25,9 +29,9 @@ export const SprintCard = () => {
         <div className={styles.cardContainer} onClick={handleClick}>
 
         <div className={styles.dataContainer}>
-        <h2>{sprintEjample.name}</h2>
-        <h3>Inicio: {sprintEjample.startDate}</h3>
-        <h3>Cierre: {sprintEjample.endDate}</h3>
+        <h2>{sprintIn.nombre}</h2>
+        <h3>Inicio: {sprintIn.fechaInicio}</h3>
+        <h3>Cierre: {sprintIn.fechaCierre}</h3>
         <div className={styles.buttonContainer}>
                 <Button className={styles.btnCustom}>
                     <img src={viewIcon} />
