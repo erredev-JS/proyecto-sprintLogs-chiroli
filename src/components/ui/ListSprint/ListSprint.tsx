@@ -25,7 +25,7 @@ export const ListSprint = () => {
         <div className={styles.containerPrincipal}>
 
             <div className={styles.containerTitle}>
-                <h2>Tareas de la Sprint 1</h2>
+                <h2>Tareas de la {sprintActiva?.nombre}</h2>
                 <div className={styles.containerButton}>
                     <Button onClick={openModalTask}>Crear Tarea</Button>
                 </div>
@@ -51,7 +51,7 @@ export const ListSprint = () => {
                     <h6>Tareas en Progreso : 1</h6>
                     <div className={styles.containerTasks}>
                     {sprintActiva?.tareas.map(task => (
-                            task.estado === 'en progreso' &&
+                            task.estado === 'en_progreso' &&
                             <div>
                                 <p>{task.titulo}</p>
                                 <p>{task.id}</p>
