@@ -10,7 +10,7 @@
     background-color: #D9D9D9;
     border-radius: 8px;
     margin-top: 10px;
-    min-width: 290px;
+  
 }
 
 .buttonsResponsive{
@@ -29,18 +29,25 @@
     justify-content: space-between;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
     .taskCard{
         flex-direction: column;
-        height: 150px;
+        height: 450px;
     }
     .buttonsResponsive{
         display: flex;
-        width: 80%;
+        width: 100%;
         justify-content: space-around;
+        margin: 0 auto;
     }
 
-    
+    .cardButtons{
+       width: 70%;
+    }
+    .btnCustom:first-child{
+        width:60px;
+        font-size: 10px;
+    }
   }
   
 

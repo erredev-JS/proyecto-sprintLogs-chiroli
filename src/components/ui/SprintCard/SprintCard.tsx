@@ -71,8 +71,8 @@ export const SprintCard: FC<ISprintCard> = ({sprintIn}) => {
 
         <div className={styles.dataContainer}>
         <h2 onClick={handleClick}>{sprintIn.nombre}</h2>
-        <h3>Inicio: {sprintIn.fechaInicio}</h3>
-        <h3>Cierre: {sprintIn.fechaCierre}</h3>
+        <h3 onClick={handleClick}>Inicio: {sprintIn.fechaInicio}</h3>
+        <h3 onClick={handleClick}>Cierre: {sprintIn.fechaCierre}</h3>
         <div className={styles.buttonContainer}>
                 <Button className={styles.btnCustom}>
                     <img src={viewIcon} />
