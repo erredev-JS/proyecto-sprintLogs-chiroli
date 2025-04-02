@@ -1,7 +1,8 @@
 import { ITareas } from "./ITareas"
 
+
 export interface ISprint {
-    id: string,
+    id: string ,
     fechaInicio: string,
     fechaCierre: string,
     nombre: string

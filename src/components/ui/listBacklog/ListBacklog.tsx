@@ -5,8 +5,6 @@ import { TareaCard } from '../TareaCard/TareaCard';
 import { useStoreModal } from '../../../store/useStoreModal';
 import { getAllTareasController } from '../../../data/tareaController';
 import useStoreTareas from '../../../store/useStoreTareas';
-import { getAllSprintsController } from '../../../data/sprintController';
-import useStoreSprints from '../../../store/useStoreSprints';
 
 
 
@@ -22,7 +20,7 @@ export const ListBacklog = () => {
 
   const {tareas} = useStoreTareas()
 
-  const {setSprints} = useStoreSprints()
+
 
   
   

@@ -63,30 +63,30 @@ export const ModalCard = () => {
     
     return(
         <div className={styles.backgroundFilter}>
-
-        <div className={styles.containerPrincipal}>
-            <div className={styles.containerTitle}>  
-                <h2>{tareaActiva? "Editar Tarea" : "Crear Tarea"}</h2>
-            </div>
-            <div>
-                <form onSubmit={handleSubmit} className={styles.containerForm} action="">
-                    <input type="text" name="titulo" id="" placeholder='Titulo' value={formValues.titulo}
-                    onChange={handleChange}/>
+            <div className={styles.containerPrincipal}>
+                <div className={styles.containerTitle}>  
+                    <h2>{tareaActiva? "Editar Tarea" : "Crear Tarea"}</h2>
+                </div>
+                <div>
+                    <form onSubmit={handleSubmit} className={styles.containerForm} action="">
+                        <input type="text" name="titulo" id="" placeholder='Titulo' value={formValues.titulo}
+                        onChange={handleChange}/>
                     
-                    <input type="text" name="descripcion" id="" placeholder='Descripcion' value={formValues.descripcion}
-                    onChange={handleChange}/>
-                    <input type="date" name="fechaLimite" id="" placeholder='Fecha Limite' value={formValues.fechaLimite}
-                    onChange={handleChange}/>
+                        <input type="text" name="descripcion" id="" placeholder='Descripcion' value={formValues.descripcion}
+                        onChange={handleChange}/>
+                        <label htmlFor="">Fecha Limite</label>
+                        <input type="date" name="fechaLimite" id="" placeholder='Fecha Limite' value={formValues.fechaLimite}
+                        onChange={handleChange}/>
 
                     
-                    <div className={styles.containerButtons}>
-                        <Button variant='danger' onClick={handleCloseModalTask}>Cancelar</Button> 
-                        <Button type='submit' variant='success'>Aceptar</Button>
-                    </div>
-                </form>
+                        <div className={styles.containerButtons}>
+                            <Button variant='danger' onClick={handleCloseModalTask}>Cancelar</Button> 
+                            <Button type='submit' variant='success'>Aceptar</Button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-                    </div>
     )
 }
 

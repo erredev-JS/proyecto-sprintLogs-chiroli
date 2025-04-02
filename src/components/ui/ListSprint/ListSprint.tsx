@@ -38,7 +38,10 @@ export const ListSprint = () => {
                     <div className={styles.containerTasks}>                       
                     {sprintActiva?.tareas.map(task => (
                             task.estado === 'pendiente' &&
-                            <p>{task.titulo}</p>
+                            <div>
+                                <p>{task.titulo}</p>
+                                <p>{task.id}</p>
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -49,7 +52,10 @@ export const ListSprint = () => {
                     <div className={styles.containerTasks}>
                     {sprintActiva?.tareas.map(task => (
                             task.estado === 'en progreso' &&
-                            <p>{task.titulo}</p>
+                            <div>
+                                <p>{task.titulo}</p>
+                                <p>{task.id}</p>
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -59,7 +65,10 @@ export const ListSprint = () => {
                     <div className={styles.containerTasks}>
                         {sprintActiva?.tareas.map(task => (
                             task.estado === 'finalizada' &&
-                            <p>{task.titulo}</p>
+                            <div>
+                                <p>{task.titulo}</p>
+                                <p>{task.id}</p>
+                            </div>
                         ))}
                     </div>  
                 </div>

@@ -2,17 +2,10 @@
   "backlog": {
     "tareas": [
       {
-        "id": "dcec0ad4-31e0-4279-8ccf-72bd1f20b52d",
-        "titulo": "Tarea backlog",
-        "descripcion": "Descripcion tarea backlog",
-        "estado": "pendiente",
-        "fechaLimite": "2025-03-05"
-      },
-      {
-        "id": "1743267406002",
-        "titulo": "otra tarea creada",
-        "descripcion": "Pizza pepperoni",
-        "estado": "pendiente",
+        "id": "1743546259722",
+        "titulo": "TAREA",
+        "descripcion": "Es una tarea",
+        "estado": "",
         "fechaLimite": "2025-04-01"
       }
     ]
@@ -33,6 +26,13 @@
             "fechaLimite": "2025-03-06"
           }
         ]
+      },
+      {
+        "id": "1743609705376",
+        "fechaInicio": "2025-04-02",
+        "fechaCierre": "2025-04-17",
+        "nombre": "Sprint2",
+        "tareas": []
       }
     ]
   }
