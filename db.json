@@ -2,35 +2,43 @@
   "backlog": {
     "tareas": [
       {
-        "id": "1743679816369",
-        "titulo": "TAREA",
-        "descripcion": "tarea",
-        "estado": "",
-        "fechaLimite": "2025-04-03"
-      },
-      {
-        "id": "1743680075936",
-        "titulo": "Pizza Peperoni",
-        "descripcion": "pizza",
-        "estado": "",
-        "fechaLimite": "2025-04-03"
+        "id": "dcec0ad4-31e0-4279-8ccf-72bd1f20b52d",
+        "titulo": "Tarea backlog",
+        "descripcion": "Descripcion tarea backlog",
+        "estado": "pendiente",
+        "fechaLimite": "2025-03-05"
       }
     ]
   },
   "sprintList": {
     "sprints": [
       {
-        "id": "1743619167448",
-        "fechaInicio": "2025-04-02",
+        "id": "b0e3f34b-68c6-49eb-b059-ab251ed81629",
+        "fechaInicio": "2025-03-04",
+        "fechaCierre": "2025-03-11",
+        "nombre": "Sprint 122",
+        "tareas": [
+          {
+            "id": "50699dec-3d1a-45ff-a94d-82d416eac053",
+            "titulo": "Tarea 2",
+            "descripcion": "Estamos aca",
+            "estado": "pendiente",
+            "fechaLimite": "2025-03-06"
+          }
+        ]
+      },
+      {
+        "id": "1743687604460",
+        "fechaInicio": "2025-04-03",
         "fechaCierre": "2025-05-11",
-        "nombre": "Sprint1",
+        "nombre": "Sprint2",
         "tareas": []
       },
       {
-        "id": "1743684711293",
-        "fechaInicio": "2004-12-27",
-        "fechaCierre": "2025-04-04",
-        "nombre": "Papa se fue",
+        "id": "1743687859207",
+        "fechaInicio": "",
+        "fechaCierre": "",
+        "nombre": "4",
         "tareas": []
       }
     ]

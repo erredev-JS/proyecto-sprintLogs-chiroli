@@ -1,5 +1,5 @@
 import { useStoreModal } from '../../../store/useStoreModal'
-import useStoreSprints from '../../../store/useStoreSprints'
+
 import { Aside } from '../../ui/Aside/Aside'
 import { Header } from '../../ui/Header/Header'
 import { ListSprint } from '../../ui/ListSprint/ListSprint'
@@ -11,7 +11,9 @@ import styles from './SprintScreen.module.css'
 export const SprintScreen = () => {
 
     const {openTask, openSprint} = useStoreModal()
-    const {setSprintActiva} = useStoreSprints()
+    
+
+    
 
   return (
     <div>

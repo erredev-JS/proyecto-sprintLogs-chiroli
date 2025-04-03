@@ -21,24 +21,31 @@ const ModalSprint = () => {
     const {setSprintActiva, sprintActiva, addSprint, editSprint} = useStoreSprints()
     const [formValues, setFormValues] = useState<ISprint>(initialStateSprint) 
 
-    
+    const [previusSprinActiva,  setPreviusSprinActiva] = useState<null | ISprint>(null)
+
     useEffect(() => {
        if (sprintActiva){
         setFormValues({...sprintActiva})
+        setPreviusSprinActiva(sprintActiva)
        }else{
         setFormValues(initialStateSprint)
        }
-    }, []);
+    }, [sprintActiva]);
     
 
     const handleChange =(e : ChangeEvent<HTMLInputElement>) => {
         const {name, value} = e.target
         setFormValues((prev) => ({...prev, [`${name}`] : value}))
     }
-
+    
     const handleCloseModalSprint = () => {
-        setSprintActiva(null)
+        if (previusSprinActiva) {
+            setSprintActiva({ ...previusSprinActiva }) // Clonamos para forzar actualización
+        } else {
+            setSprintActiva(null)
+        }
         closeModalSprint()
+        window.location.reload()
     }
 
     const handleSubmit = (e : FormEvent) => {
