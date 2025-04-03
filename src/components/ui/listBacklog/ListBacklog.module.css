@@ -9,6 +9,8 @@
     padding: 10px;
     
     height: 90vh;
+   
+   
 }
 
 .tasksContainer {
@@ -20,6 +22,7 @@
     
     height: 50px;
     padding: 10px;
+    
 }
 
 .listContainer{
@@ -65,7 +68,7 @@
 }
 
 .cardButtons{
-   
+    
     width: 50%;
     display: flex;
     justify-content: space-between;
@@ -91,7 +94,7 @@
 
     }
     
-  }
+}
 
   .btnCustom {
     background-color: #6B63D4 !important;

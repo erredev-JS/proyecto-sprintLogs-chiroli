@@ -9,18 +9,19 @@
     min-width: 220px;
     max-width: 320px;
 
+
 }
 
 
 .asideMainContainer{
 
     text-align: center;
-   
+
     justify-content: center;
     background-color: #eaeaea;
     border-radius: 12px;
     padding: 20px;
-    height: 70vh;
+    height: 77VH;
 }
 
 .backlogButton{
@@ -77,10 +78,10 @@
     display: flex;
     gap: 20px;
     flex-direction: column;
-    max-height: 400px;
+    max-height: 60vh;
     overflow-y: auto;
     
     scrollbar-width: thin; /* Para Firefox */
     scrollbar-color: #888 #f0f0f0; /* Color de la barra y el fondo */
-
+    padding: 10px;
   }
