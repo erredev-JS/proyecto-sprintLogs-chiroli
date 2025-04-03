@@ -11,8 +11,8 @@
     border-radius: 12px;
     background-color: #B2B2B2;
     width: 98%;
-    align-items: center;
     
+   
 }
 
 
@@ -29,13 +29,14 @@
 
 
 .dataContainer{
-    text-align: left;
+   
     font-size: 8px;
-    
 }
 
-.dataContainer h3{
-    font-size: 18px;
+.dataContainer h2{
+    font-size: 22px;
+    overflow: auto;
+    overflow-y: hidden;
     
 }
 .dataContainer h3{
@@ -45,9 +46,11 @@
 
 .buttonContainer{
     display: flex;
-    justify-content: end;
     gap: 8px;
+    width: 90%;
+ 
     margin: 0 auto;
+    justify-content: center;
 }
 
 .btnCustom img{
@@ -66,5 +69,5 @@
     scale: 1.1;
     outline: 2px solid red !important;
     background-color: #d46363 !important ;
-  
+    
   }
