@@ -1,7 +1,7 @@
 import axios from "axios";
 import { ISprintList } from "../types/iSprintList";
 import { URL_SPRINTLIST } from "../utils/constantes";
-import { ISprint } from "../types/ISprints";
+import { ISprint } from "../types/iSprints";
 
 
 export const putSprintList = async (sprints: ISprint[]) => {

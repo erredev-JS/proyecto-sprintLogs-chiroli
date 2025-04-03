@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { ISprint } from "../types/ISprints";
+import { ISprint } from "../types/iSprints";
 import { ITareas } from "../types/ITareas";
 
 

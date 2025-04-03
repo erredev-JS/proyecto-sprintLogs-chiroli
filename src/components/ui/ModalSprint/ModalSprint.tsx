@@ -3,7 +3,7 @@ import styles from './ModalSprint.module.css'
 import { useStoreModal } from '../../../store/useStoreModal'
 import useStoreSprints from '../../../store/useStoreSprints'
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
-import { ISprint } from '../../../types/ISprints'
+import { ISprint } from '../../../types/iSprints'
 import { createSprintController, updateSprintController } from '../../../data/sprintController'
 
 
@@ -17,7 +17,7 @@ const ModalSprint = () => {
         tareas : []
     }
 
-    const {openSprint, closeModalSprint} = useStoreModal()
+    const { closeModalSprint} = useStoreModal()
     const {setSprintActiva, sprintActiva, addSprint, editSprint} = useStoreSprints()
     const [formValues, setFormValues] = useState<ISprint>(initialStateSprint) 
 
@@ -28,9 +28,8 @@ const ModalSprint = () => {
        }else{
         setFormValues(initialStateSprint)
        }
-    }, [sprintActiva]);
+    }, []);
     
-    if (!openSprint) return null // Si es falso no renderiza
 
     const handleChange =(e : ChangeEvent<HTMLInputElement>) => {
         const {name, value} = e.target
@@ -49,10 +48,13 @@ const ModalSprint = () => {
             formValues.id = Date.now().toString()
             createSprintController(formValues)
             addSprint(formValues)
+            
         }else{
             updateSprintController(formValues)
             editSprint(formValues)
+            
         }
+        
         handleCloseModalSprint()
     }
 

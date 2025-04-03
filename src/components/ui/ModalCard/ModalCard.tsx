@@ -19,7 +19,7 @@ export const ModalCard = () => {
 
 
     const {tareaActiva, editTarea, setTareaActiva, addTareaInactiva} = useStoreTareas()
-    const { openTask, closeModalTask} = useStoreModal()
+    const {closeModalTask} = useStoreModal()
     const [formValues, setFormValues] = useState<ITareas>(initialStateTarea);
 
     useEffect(()=> {
@@ -31,7 +31,7 @@ export const ModalCard = () => {
     }, [tareaActiva])
 
     
-    if (!openTask) return null // Si es falso no renderiza
+    
     
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
