@@ -2,30 +2,36 @@
   "backlog": {
     "tareas": [
       {
-        "id": "1743546259722",
+        "id": "1743679816369",
         "titulo": "TAREA",
-        "descripcion": "Es una tarea",
+        "descripcion": "tarea",
         "estado": "",
-        "fechaLimite": "2025-04-01"
+        "fechaLimite": "2025-04-03"
+      },
+      {
+        "id": "1743680075936",
+        "titulo": "Pizza Peperoni",
+        "descripcion": "pizza",
+        "estado": "",
+        "fechaLimite": "2025-04-03"
       }
     ]
   },
   "sprintList": {
     "sprints": [
       {
-        "id": "b0e3f34b-68c6-49eb-b059-ab251ed81629",
-        "fechaInicio": "2025-03-03",
-        "fechaCierre": "2025-03-04",
-        "nombre": "Sprint video Chiroli",
-        "tareas": [
-          {
-            "id": "50699dec-3d1a-45ff-a94d-82d416eac053",
-            "titulo": "Tarea 2",
-            "descripcion": "Estamos aca",
-            "estado": "pendiente",
-            "fechaLimite": "2025-03-06"
-          }
-        ]
+        "id": "1743619167448",
+        "fechaInicio": "2025-04-02",
+        "fechaCierre": "2025-05-11",
+        "nombre": "Sprint1",
+        "tareas": []
+      },
+      {
+        "id": "1743680213113",
+        "fechaInicio": "2025-04-03",
+        "fechaCierre": "2025-05-02",
+        "nombre": "Sprint2",
+        "tareas": []
       }
     ]
   }

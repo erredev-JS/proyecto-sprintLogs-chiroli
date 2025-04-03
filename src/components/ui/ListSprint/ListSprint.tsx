@@ -15,11 +15,12 @@ export const ListSprint = () => {
     const {openModalTask} = useStoreModal()
     
     
-    useEffect(()=>{
-        setSprintActiva(sprints[0])
-        console.log(sprintActiva);
-        
-    },[sprintActiva])
+    useEffect(() => {
+        if (!sprintActiva && sprints.length > 0) {
+            setSprintActiva(sprints[0]); 
+        }
+    }, [sprints]); 
+    
 
     return (
         <div className={styles.containerPrincipal}>
