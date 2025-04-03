@@ -18,7 +18,6 @@
     justify-content: space-around;
     flex-direction: row;
     width:50%;
-  
     align-items: center;
 }
 
@@ -32,7 +31,7 @@
 @media (max-width: 850px) {
     .taskCard{
         flex-direction: column;
-        height: 450px;
+        height: 200px;
     }
     .buttonsResponsive{
         display: flex;

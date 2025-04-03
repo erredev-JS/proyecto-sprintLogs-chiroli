@@ -32,6 +32,13 @@
         "fechaCierre": "2025-05-02",
         "nombre": "Sprint2",
         "tareas": []
+      },
+      {
+        "id": "1743680561028",
+        "fechaInicio": "2025-04-25",
+        "fechaCierre": "2025-04-27",
+        "nombre": "Ricardo Iorio",
+        "tareas": []
       }
     ]
   }
