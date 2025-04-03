@@ -45,12 +45,11 @@ const ModalSprint = () => {
         } else {
             setSprintActiva(null)
         }
+    
         closeModalSprint()
-        window.location.reload() //esto esta causando errores al crear sprints
-    }
-    const handleTareaClick = () => {
-        setSprintActiva(null)
-        
+        setTimeout(()=> {
+            window.location.reload()
+        }, 500)
     }
 
     const handleSubmit = (e : FormEvent) => {
@@ -87,7 +86,7 @@ const ModalSprint = () => {
                     <input type="date" name="fechaCierre" id="" placeholder='Fecha Cierre' value={formValues.fechaCierre} onChange={handleChange}/>
                     <div className={styles.containerButtons}>
                         <Button variant='danger' onClick={handleCloseModalSprint}>Cancelar</Button> 
-                        <Button type='submit' variant='success' onClick={handleTareaClick}>Aceptar</Button>
+                        <Button type='submit' variant='success'>Aceptar</Button>
                     </div>
                 </form>
             </div>
