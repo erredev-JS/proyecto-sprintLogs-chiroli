@@ -9,6 +9,7 @@ import useStoreSprints from '../../../store/useStoreSprints'
 import { ISprint } from '../../../types/iSprints'
 import Swal from 'sweetalert2'
 import { eliminateSprintController } from '../../../data/sprintController'
+import { useStoreModal } from '../../../store/useStoreModal'
 
 
 type ISprintCard = {
@@ -18,6 +19,7 @@ type ISprintCard = {
 export const SprintCard: FC<ISprintCard> = ({sprintIn}) => {
 
     const {setSprintActiva, deleteSprint} = useStoreSprints()
+    const {openModalSprint} = useStoreModal()
 
 
     const navigate = useNavigate();
@@ -25,6 +27,11 @@ export const SprintCard: FC<ISprintCard> = ({sprintIn}) => {
       setSprintActiva(sprintIn)
       navigate("/sprintScreen");
     };
+
+    const handleOpenModalSprintEdit = () => {
+      setSprintActiva(sprintIn)
+      openModalSprint()
+    }
 
     const handleDeleteSprint = () => {
         const swalWithBootstrapButtons = Swal.mixin({
@@ -78,7 +85,7 @@ export const SprintCard: FC<ISprintCard> = ({sprintIn}) => {
                 <Button className={styles.btnCustom} onClick={handleClick}>
                     <img src={viewIcon} />
                 </Button>
-                <Button className={styles.btnCustom}>
+                <Button className={styles.btnCustom} onClick={handleOpenModalSprintEdit}>
                     <img src={editIcon} />
                 </Button>
                 <Button onClick={handleDeleteSprint} variant='danger' className={styles.btnCustomDelete}>

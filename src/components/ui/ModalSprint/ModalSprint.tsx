@@ -38,6 +38,7 @@ const ModalSprint = () => {
         setFormValues((prev) => ({...prev, [`${name}`] : value}))
     }
     
+    
     const handleCloseModalSprint = () => {
         if (previusSprinActiva) {
             setSprintActiva({ ...previusSprinActiva }) // Clonamos para forzar actualización
