@@ -47,11 +47,10 @@ const ModalSprint = () => {
         }
     
         closeModalSprint()
-    
-        setTimeout(() => {
+        setTimeout(()=> {
             window.location.reload()
-        }, 500) // Se ejecutará correctamente después de 3 segundos
-    };
+        }, 500)
+    }
 
     const handleSubmit = (e : FormEvent) => {
         e.preventDefault()

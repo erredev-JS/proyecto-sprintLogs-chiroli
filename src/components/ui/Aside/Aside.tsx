@@ -31,8 +31,8 @@ export const Aside = () => {
 
     const navigate = useNavigate();
     const handleClick = () => {
+        setSprintActiva(null)
     navigate("/");
-    setSprintActiva(null)
     };
     
 
