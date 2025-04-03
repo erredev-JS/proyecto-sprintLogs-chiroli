@@ -1,8 +1,9 @@
 
 
+import { useStoreModal } from "../../../store/useStoreModal"
 import { Aside } from "../../ui/Aside/Aside"
 import { Header } from "../../ui/Header/Header"
-import { ListBacklog } from "../../ui/ListBacklog/ListBacklog"
+import { ListBacklog } from "../../ui/listBacklog/ListBacklog"
 
 import { ModalCard } from "../../ui/ModalCard/ModalCard"
 
@@ -17,7 +18,9 @@ import styles from './BacklogScreen.module.css'
 
 export const BacklogScreen = () => {
 
+  const {openViewTask, openTask, openSprint } = useStoreModal()
   
+    
 
   return (
     
@@ -26,12 +29,12 @@ export const BacklogScreen = () => {
       <div className={styles.mainContainer}>
 
       <Aside></Aside>
-      <ListBacklog></ListBacklog>
+      <ListBacklog/>
   
       </div>
-      <ModalSprint/>
-      <ModalCard/>
-      <ModalViewCard />
+      {openSprint && <ModalSprint/>}
+      {openTask && <ModalCard/>}
+      {openViewTask && <ModalViewCard/>}
       
       
       

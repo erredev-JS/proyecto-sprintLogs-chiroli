@@ -6,7 +6,7 @@ import deleteIcon from '../../../assets/deleteIcon.svg'
 import { useNavigate } from 'react-router-dom'
 import { FC } from 'react'
 import useStoreSprints from '../../../store/useStoreSprints'
-import { ISprint } from '../../../types/ISprints'
+import { ISprint } from '../../../types/iSprints'
 import Swal from 'sweetalert2'
 import { eliminateSprintController } from '../../../data/sprintController'
 

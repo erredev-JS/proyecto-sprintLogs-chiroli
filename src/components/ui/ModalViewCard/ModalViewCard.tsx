@@ -11,9 +11,9 @@ import { useStoreModal } from '../../../store/useStoreModal'
 
 export const ModalViewCard = () => {
     const {tareaActiva, setTareaActiva} = useStoreTareas()
-    const {openViewTask, closeModalViewTask} = useStoreModal()
+    const {closeModalViewTask} = useStoreModal()
 
-    if (!openViewTask) return null
+   
 
     const handleCloseModalView = () => {
         setTareaActiva(null)

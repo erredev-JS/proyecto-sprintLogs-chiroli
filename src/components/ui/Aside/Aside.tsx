@@ -12,7 +12,7 @@ import { getAllSprintsController } from '../../../data/sprintController'
 
 export const Aside = () => {
 
-    const { openModalSprint } = useStoreModal()
+    const { openModalSprint} = useStoreModal()
     const {setSprints, sprints, setSprintActiva} = useStoreSprints()
 
     useEffect(()=>{
@@ -53,6 +53,7 @@ export const Aside = () => {
                 <div className={styles.cardContainer}>
                     {sprints.map((sprint) => <SprintCard key={sprint.id} sprintIn={sprint} />)}
                 </div>
+                
             </div>
     </div>
         
