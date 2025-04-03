@@ -13,24 +13,38 @@
   "sprintList": {
     "sprints": [
       {
-        "id": "1743687604460",
-        "fechaInicio": "2025-04-03",
-        "fechaCierre": "2025-05-18",
-        "nombre": "Sprint2",
+        "id": "1743721956385",
+        "fechaInicio": "2025-04-11",
+        "fechaCierre": "2025-04-13",
+        "nombre": "mauro garcia",
         "tareas": []
       },
       {
-        "id": "1743704684201",
-        "fechaInicio": "2025-04-03",
-        "fechaCierre": "2025-04-12",
-        "nombre": "Sprint video Chiroli",
+        "id": "1743721979407",
+        "fechaInicio": "2025-04-06",
+        "fechaCierre": "2025-04-19",
+        "nombre": "mauro massa",
         "tareas": []
       },
       {
-        "id": "1743704825367",
-        "fechaInicio": "",
-        "fechaCierre": "",
-        "nombre": "Naranja",
+        "id": "1743722219045",
+        "fechaInicio": "2025-04-12",
+        "fechaCierre": "2025-04-05",
+        "nombre": "Ricardo Iorio",
+        "tareas": []
+      },
+      {
+        "id": "1743722244499",
+        "fechaInicio": "2025-04-11",
+        "fechaCierre": "2025-04-06",
+        "nombre": "Ricardero bananero",
+        "tareas": []
+      },
+      {
+        "id": "1743722270909",
+        "fechaInicio": "2025-04-13",
+        "fechaCierre": "2025-04-11",
+        "nombre": "cocodrilou bombardirou",
         "tareas": []
       }
     ]
