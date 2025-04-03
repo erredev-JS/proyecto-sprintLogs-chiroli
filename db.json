@@ -20,38 +20,25 @@
   "sprintList": {
     "sprints": [
       {
-        "id": "1743721956385",
+        "id": "b0e3f34b-68c6-49eb-b059-ab251ed81629",
+        "fechaInicio": "2025-03-04",
+        "fechaCierre": "2025-03-11",
+        "nombre": "Sprint 121",
+        "tareas": [
+          {
+            "id": "50699dec-3d1a-45ff-a94d-82d416eac053",
+            "titulo": "Tarea 2",
+            "descripcion": "Estamos aca",
+            "estado": "pendiente",
+            "fechaLimite": "2025-03-06"
+          }
+        ]
+      },
+      {
+        "id": "1743723357420",
         "fechaInicio": "2025-04-11",
-        "fechaCierre": "2025-04-13",
-        "nombre": "mauro garcia",
-        "tareas": []
-      },
-      {
-        "id": "1743721979407",
-        "fechaInicio": "2025-04-06",
-        "fechaCierre": "2025-04-19",
-        "nombre": "mauro massa",
-        "tareas": []
-      },
-      {
-        "id": "1743722219045",
-        "fechaInicio": "2025-04-12",
-        "fechaCierre": "2025-04-05",
-        "nombre": "Ricardo Iorio",
-        "tareas": []
-      },
-      {
-        "id": "1743722244499",
-        "fechaInicio": "2025-04-11",
-        "fechaCierre": "2025-04-06",
-        "nombre": "Ricardero bananero",
-        "tareas": []
-      },
-      {
-        "id": "1743722270909",
-        "fechaInicio": "2025-04-13",
-        "fechaCierre": "2025-04-11",
-        "nombre": "cocodrilou bombardirou",
+        "fechaCierre": "2025-05-10",
+        "nombre": "moski",
         "tareas": []
       },
       {
