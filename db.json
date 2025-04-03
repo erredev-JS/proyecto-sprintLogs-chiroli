@@ -26,41 +26,6 @@
             "fechaLimite": "2025-03-06"
           }
         ]
-      },
-      {
-        "id": "1743687604460",
-        "fechaInicio": "2025-04-03",
-        "fechaCierre": "2025-05-18",
-        "nombre": "Sprint2",
-        "tareas": []
-      },
-      {
-        "id": "1743687859207",
-        "fechaInicio": "",
-        "fechaCierre": "",
-        "nombre": "4",
-        "tareas": []
-      },
-      {
-        "id": "1743683657962",
-        "fechaInicio": "2025-04-18",
-        "fechaCierre": "2025-04-19",
-        "nombre": "ppppppppppppp",
-        "tareas": []
-      },
-      {
-        "id": "1743684340948",
-        "fechaInicio": "2025-04-06",
-        "fechaCierre": "2025-04-11",
-        "nombre": "aaaaaaaaaaaaaaaaa",
-        "tareas": []
-      },
-      {
-        "id": "1743686570608",
-        "fechaInicio": "2025-04-06",
-        "fechaCierre": "2025-04-11",
-        "nombre": "A",
-        "tareas": []
       }
     ]
   }
