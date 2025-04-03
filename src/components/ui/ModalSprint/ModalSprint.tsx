@@ -46,7 +46,7 @@ const ModalSprint = () => {
             setSprintActiva(null)
         }
         closeModalSprint()
-        window.location.reload()
+        window.location.reload() //esto esta causando errores al crear sprints
     }
 
     const handleSubmit = (e : FormEvent) => {

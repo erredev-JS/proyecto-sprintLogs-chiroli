@@ -13,21 +13,6 @@
   "sprintList": {
     "sprints": [
       {
-        "id": "b0e3f34b-68c6-49eb-b059-ab251ed81629",
-        "fechaInicio": "2025-03-04",
-        "fechaCierre": "2025-03-11",
-        "nombre": "Sprint 121",
-        "tareas": [
-          {
-            "id": "50699dec-3d1a-45ff-a94d-82d416eac053",
-            "titulo": "Tarea 2",
-            "descripcion": "Estamos aca",
-            "estado": "pendiente",
-            "fechaLimite": "2025-03-06"
-          }
-        ]
-      },
-      {
         "id": "1743687604460",
         "fechaInicio": "2025-04-03",
         "fechaCierre": "2025-05-18",
@@ -35,31 +20,17 @@
         "tareas": []
       },
       {
-        "id": "1743687859207",
+        "id": "1743704684201",
+        "fechaInicio": "2025-04-03",
+        "fechaCierre": "2025-04-12",
+        "nombre": "Sprint video Chiroli",
+        "tareas": []
+      },
+      {
+        "id": "1743704825367",
         "fechaInicio": "",
         "fechaCierre": "",
-        "nombre": "4",
-        "tareas": []
-      },
-      {
-        "id": "1743683657962",
-        "fechaInicio": "2025-04-18",
-        "fechaCierre": "2025-04-19",
-        "nombre": "ppppppppppppp",
-        "tareas": []
-      },
-      {
-        "id": "1743684340948",
-        "fechaInicio": "2025-04-06",
-        "fechaCierre": "2025-04-11",
-        "nombre": "aaaaaaaaaaaaaaaaa",
-        "tareas": []
-      },
-      {
-        "id": "1743686570608",
-        "fechaInicio": "2025-04-06",
-        "fechaCierre": "2025-04-11",
-        "nombre": "A",
+        "nombre": "Naranja",
         "tareas": []
       }
     ]
