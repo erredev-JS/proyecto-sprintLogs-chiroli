@@ -7,7 +7,7 @@ export const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<BacklogScreen />} />
-      <Route path="/sprintScreen" element={<SprintScreen />} />
+      <Route path="/sprintScreen/:idsprint" element={<SprintScreen />} />
     </Routes>
   );
 }
