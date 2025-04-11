@@ -67,6 +67,20 @@
             "descripcion": "Pizza pepperoni 69",
             "estado": "pendiente",
             "fechaLimite": "2025-04-25"
+          },
+          {
+            "id": "1744377542076",
+            "titulo": "morado",
+            "descripcion": "morado",
+            "estado": "pendiente",
+            "fechaLimite": "2025-04-06"
+          },
+          {
+            "id": "1744378635611",
+            "titulo": "TAREA",
+            "descripcion": "tarea1",
+            "estado": "pendiente",
+            "fechaLimite": "2025-04-05"
           }
         ]
       }
