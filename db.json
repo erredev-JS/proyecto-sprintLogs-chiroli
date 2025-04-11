@@ -69,6 +69,13 @@
             "fechaLimite": "2025-04-25"
           }
         ]
+      },
+      {
+        "id": "1744379005548",
+        "fechaInicio": "2025-04-26",
+        "fechaCierre": "2025-04-30",
+        "nombre": "BENDITO RUFIAN",
+        "tareas": []
       }
     ]
   }
