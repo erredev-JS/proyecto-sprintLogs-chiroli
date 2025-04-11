@@ -1,0 +1,49 @@
+.containerPrincipal{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px;
+    padding: 1rem;
+    width: 18vw;
+    backdrop-filter: blur(10px);
+    min-width: 400px;
+    max-width: 500px;
+}
+.containerTitle{
+    padding: 10px;
+    text-align: center;
+}
+.containerListSprints{
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aliceblue;
+    
+}
+.containerSprints{
+    padding: 1px;
+    width: 100%;
+    padding: 5px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+.containerButtons{
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.containerSprints:hover{
+    background-color: rgb(218, 236, 252);
+    cursor: pointer;
+    transform: scale(1.01);
+}
+.sprintactive {
+    background-color: #d1e7dd;
+    border: 2px solid #188d56;
+}

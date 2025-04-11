@@ -7,6 +7,13 @@
         "descripcion": "Descripcion tarea backlog",
         "estado": "pendiente",
         "fechaLimite": "2025-03-05"
+      },
+      {
+        "id": "1744365844163",
+        "titulo": "TAREA1",
+        "descripcion": "tarea",
+        "estado": "",
+        "fechaLimite": "2025-04-11"
       }
     ]
   },
@@ -24,7 +31,15 @@
             "descripcion": "Estamos aca",
             "estado": "pendiente",
             "fechaLimite": "2025-03-06"
+          },
+          {
+            "id": "dcec0ad4-31e0-4279-8ccf-72bd1f20b52d",
+            "titulo": "Tarea backlog",
+            "descripcion": "Descripcion tarea backlog",
+            "estado": "pendiente",
+            "fechaLimite": "2025-03-05"
           }
+          
         ]
       },
       {
@@ -32,7 +47,9 @@
         "fechaInicio": "2025-04-11",
         "fechaCierre": "2025-05-10",
         "nombre": "moski 2",
-        "tareas": []
+        "tareas": [
+          
+        ]
       }
     ]
   }
