@@ -49,6 +49,7 @@ export const ModalCard = () => {
 
         if(!tareaActiva){
             formValues.id = Date.now().toString()
+            formValues.estado = "pendiente"
             createTareaController(formValues)
             addTareaInactiva(formValues)
         }else{

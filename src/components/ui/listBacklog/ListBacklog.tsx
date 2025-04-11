@@ -36,7 +36,7 @@ export const ListBacklog = () => {
       
       firstGetTareas();
       
-    }, [])
+    }, [tareas])
 
   return (
     <>
