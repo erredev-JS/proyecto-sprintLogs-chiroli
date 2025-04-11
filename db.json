@@ -68,6 +68,13 @@
         "fechaCierre": "2025-04-04",
         "nombre": "sin el reload",
         "tareas": []
+      },
+      {
+        "id": "1743723676280",
+        "fechaInicio": "2025-04-25",
+        "fechaCierre": "2025-04-05",
+        "nombre": "sdasda",
+        "tareas": []
       }
     ]
   }
