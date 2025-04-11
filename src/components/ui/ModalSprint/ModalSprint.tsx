@@ -47,9 +47,9 @@ const ModalSprint = () => {
         }
     
         closeModalSprint()
-        setTimeout(()=> {
-            window.location.reload()
-        }, 500)
+        // setTimeout(()=> {
+        //     window.location.reload()
+        // }, 500)
     }
 
     const handleSubmit = (e : FormEvent) => {
@@ -75,7 +75,7 @@ const ModalSprint = () => {
 
         <div className={styles.containerPrincipal}>
             <div className={styles.containerTitle}>  
-                <h2>Crear Sprint</h2>
+                <h2>{sprintActiva ? 'Editar Sprint' : 'Crear Sprint'}</h2>
             </div>
             <div>
                 <form className={styles.containerForm}  onSubmit={handleSubmit} action="">

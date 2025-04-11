@@ -18,11 +18,12 @@ type ITareaCard = {
 
 export const TareaCard: FC<ITareaCard> = ({tarea}) => {
 
-  const {openModalTask, openModalViewTask} = useStoreModal()
+  const {openModalTask, openModalViewTask, openModalTaskSend} = useStoreModal()
 
   const {deleteTarea} = useStoreTareas()
 
   const setTareaActiva = useStoreTareas((state) => state.setTareaActiva)
+
 
   const handleOpenModalTareaEdit = (tarea: ITareas)=> {
     setTareaActiva(tarea)
@@ -31,6 +32,11 @@ export const TareaCard: FC<ITareaCard> = ({tarea}) => {
   const handleOpenModalView = (tarea: ITareas)=> {
     setTareaActiva(tarea)
     openModalViewTask()
+  }
+
+  const handleOpenModalSendTask = (tarea : ITareas) =>{
+    setTareaActiva(tarea)
+    openModalTaskSend()
   }
 
 
@@ -84,7 +90,7 @@ swalWithBootstrapButtons.fire({
             <div className={styles.buttonsResponsive}>
 
             <div className={styles.cardSend}>
-            <Button  style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }} className={styles.btnCustom}>Enviar a 🏁</Button>
+            <Button onClick={() => handleOpenModalSendTask(tarea)}  style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }} className={styles.btnCustom}>Enviar a 🏁</Button>
             </div>
             <div className={styles.cardButtons}>
             <Button onClick={() => handleOpenModalView(tarea)} style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }}  className={styles.btnCustom}><img src={viewIcon} /></Button>

@@ -25,7 +25,7 @@ export const SprintCard: FC<ISprintCard> = ({sprintIn}) => {
     const navigate = useNavigate();
     const handleClick = () => {
       setSprintActiva(sprintIn)
-      navigate("/sprintScreen");
+      navigate(`/sprintScreen/${sprintIn.id}`);
     };
 
     const handleOpenModalSprintEdit = () => {

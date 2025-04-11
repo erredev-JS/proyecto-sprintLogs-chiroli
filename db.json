@@ -31,6 +31,20 @@
             "descripcion": "Estamos aca",
             "estado": "pendiente",
             "fechaLimite": "2025-03-06"
+          },
+          {
+            "id": "dcec0ad4-31e0-4279-8ccf-72bd1f20b52d",
+            "titulo": "Tarea backlog",
+            "descripcion": "Descripcion tarea backlog",
+            "estado": "pendiente",
+            "fechaLimite": "2025-03-05"
+          },
+          {
+            "id": "1744377006791",
+            "titulo": "Naranja",
+            "descripcion": "Pizza pepperoni 2",
+            "estado": "pendiente",
+            "fechaLimite": "2025-04-26"
           }
         ]
       },
@@ -38,43 +52,30 @@
         "id": "1743723357420",
         "fechaInicio": "2025-04-11",
         "fechaCierre": "2025-05-10",
-        "nombre": "moski",
-        "tareas": []
-      },
-      {
-        "id": "1743722537287",
-        "fechaInicio": "2025-04-13",
-        "fechaCierre": "2025-04-13",
-        "nombre": "moski",
-        "tareas": []
-      },
-      {
-        "id": "1743722598847",
-        "fechaInicio": "2025-04-11",
-        "fechaCierre": "2025-04-12",
-        "nombre": "gragas",
-        "tareas": []
-      },
-      {
-        "id": "1743722613604",
-        "fechaInicio": "2025-04-19",
-        "fechaCierre": "2025-04-19",
-        "nombre": "pepito",
-        "tareas": []
-      },
-      {
-        "id": "1743722630879",
-        "fechaInicio": "2025-04-27",
-        "fechaCierre": "2025-04-04",
-        "nombre": "sin el reload",
-        "tareas": []
-      },
-      {
-        "id": "1743723676280",
-        "fechaInicio": "2025-04-25",
-        "fechaCierre": "2025-04-05",
-        "nombre": "sdasda",
-        "tareas": []
+        "nombre": "moski 2",
+        "tareas": [
+          {
+            "id": "1744371108395",
+            "titulo": "Naranja",
+            "descripcion": "Pizza pepperoni",
+            "estado": "",
+            "fechaLimite": "2025-04-26"
+          },
+          {
+            "id": "1744377110632",
+            "titulo": "Tarea que se borra del Backlog",
+            "descripcion": "Me voy a borrar :c",
+            "estado": "pendiente",
+            "fechaLimite": "2025-04-30"
+          },
+          {
+            "id": "1744377258823",
+            "titulo": "Naranja 47",
+            "descripcion": "Pizza pepperoni 69",
+            "estado": "pendiente",
+            "fechaLimite": "2025-04-25"
+          }
+        ]
       }
     ]
   }

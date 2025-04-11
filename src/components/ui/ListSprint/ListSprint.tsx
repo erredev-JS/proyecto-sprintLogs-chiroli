@@ -5,11 +5,20 @@ import { useStoreModal } from "../../../store/useStoreModal"
 
 import useStoreSprints from "../../../store/useStoreSprints"
 
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import {  useParams } from "react-router-dom"
+import { ISprint } from "../../../types/iSprints"
 
 
 
 export const ListSprint = () => {
+
+    const { idsprint } = useParams()
+    
+    //con esto se adquiere el id del sprint seleccionado
+    
+
+    const [selectedSprint, setSelectedSprint] = useState<ISprint>()
 
     const {sprints, setSprintActiva, sprintActiva} = useStoreSprints()
     const {openModalTask} = useStoreModal()
@@ -21,12 +30,16 @@ export const ListSprint = () => {
         }
     }, [sprints]); 
     
+    useEffect(() => {
+        const foundSprint = sprints.find((sprint) => sprint.id === idsprint)
+        setSelectedSprint(foundSprint)
+    }, [sprintActiva, idsprint]);
 
     return (
         <div className={styles.containerPrincipal}>
 
             <div className={styles.containerTitle}>
-                <h2>Tareas de la {sprintActiva?.nombre}</h2>
+                <h2>Tareas de la {selectedSprint?.nombre}</h2>
                 <div className={styles.containerButton}>
                     <Button onClick={openModalTask}>Crear Tarea</Button>
                 </div>
@@ -37,7 +50,7 @@ export const ListSprint = () => {
                 <div className={styles.containerContentTasks}>
                     <h6>Tareas Pendientes : 1</h6>
                     <div className={styles.containerTasks}>                       
-                    {sprintActiva?.tareas.map(task => (
+                    {selectedSprint?.tareas.map(task => (
                             task.estado === 'pendiente' &&
                             <div>
                                 <p>{task.titulo}</p>
@@ -51,7 +64,7 @@ export const ListSprint = () => {
                     
                     <h6>Tareas en Progreso : 1</h6>
                     <div className={styles.containerTasks}>
-                    {sprintActiva?.tareas.map(task => (
+                    {selectedSprint?.tareas.map(task => (
                             task.estado === 'en_progreso' &&
                             <div>
                                 <p>{task.titulo}</p>
@@ -64,7 +77,7 @@ export const ListSprint = () => {
                 <div className={styles.containerContentTasks}>
                     <h6>Tareas Finalizadas : 1</h6>
                     <div className={styles.containerTasks}>
-                        {sprintActiva?.tareas.map(task => (
+                        {selectedSprint?.tareas.map(task => (
                             task.estado === 'finalizada' &&
                             <div>
                                 <p>{task.titulo}</p>
