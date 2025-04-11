@@ -35,6 +35,12 @@ export const ListSprint = () => {
         setSelectedSprint(foundSprint)
     }, [sprintActiva, idsprint]);
 
+
+    const pendingTasks = selectedSprint?.tareas.filter(task => task.estado === 'pendiente') || []
+    const inProgress = selectedSprint?.tareas.filter(task => task.estado === 'en_progreso') || []
+    const completed = selectedSprint?.tareas.filter(task => task.estado === 'finalizada') || []
+
+
     return (
         <div className={styles.containerPrincipal}>
 
@@ -48,7 +54,7 @@ export const ListSprint = () => {
             <div className={styles.containercontentFlex}>
 
                 <div className={styles.containerContentTasks}>
-                    <h6>Tareas Pendientes : 1</h6>
+                    <h6>Tareas Pendientes : {pendingTasks.length}</h6>
                     <div className={styles.containerTasks}>                       
                     {selectedSprint?.tareas.map(task => (
                             task.estado === 'pendiente' &&
@@ -62,7 +68,7 @@ export const ListSprint = () => {
 
                 <div className={styles.containerContentTasks}>
                     
-                    <h6>Tareas en Progreso : 1</h6>
+                    <h6>Tareas en Progreso : {inProgress.length}</h6>
                     <div className={styles.containerTasks}>
                     {selectedSprint?.tareas.map(task => (
                             task.estado === 'en_progreso' &&
@@ -75,7 +81,7 @@ export const ListSprint = () => {
                 </div>
 
                 <div className={styles.containerContentTasks}>
-                    <h6>Tareas Finalizadas : 1</h6>
+                    <h6>Tareas Finalizadas : {completed.length}</h6>
                     <div className={styles.containerTasks}>
                         {selectedSprint?.tareas.map(task => (
                             task.estado === 'finalizada' &&
