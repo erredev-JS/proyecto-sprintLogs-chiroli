@@ -6,6 +6,8 @@ import { ITareas } from '../../../types/ITareas'
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import useStoreTareas from '../../../store/useStoreTareas'
 import { createTareaController, updateTareaController } from '../../../data/tareaController'
+import useStoreSprints from '../../../store/useStoreSprints'
+import { updateSprintController } from '../../../data/sprintController'
 
 
 export const ModalCard = () => {
@@ -17,7 +19,7 @@ export const ModalCard = () => {
         fechaLimite: ""
     }
 
-
+    const {sprintActiva, addTaskToSprint, setSprintActiva, editTaskSprint} = useStoreSprints()
     const {tareaActiva, editTarea, setTareaActiva, addTareaInactiva} = useStoreTareas()
     const {closeModalTask} = useStoreModal()
     const [formValues, setFormValues] = useState<ITareas>(initialStateTarea);
@@ -47,16 +49,43 @@ export const ModalCard = () => {
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
 
-        if(!tareaActiva){
-            formValues.id = Date.now().toString()
-            formValues.estado = "pendiente"
-            createTareaController(formValues)
-            addTareaInactiva(formValues)
+        if(!sprintActiva){
+            if(!tareaActiva){
+                formValues.id = Date.now().toString()
+                formValues.estado = "pendiente"
+                createTareaController(formValues)
+                addTareaInactiva(formValues)
+            }else{
+                updateTareaController(formValues)
+                editTarea(formValues)
+                
+            }
         }else{
-            updateTareaController(formValues)
-            editTarea(formValues)
-            
+            if(!tareaActiva){
+                console.log("Creando tarea en Sprint activa", sprintActiva.nombre)
+                formValues.id = Date.now().toString()
+                formValues.estado = "pendiente"
+                addTaskToSprint(formValues, sprintActiva.id)
+
+                const sprintActualizado = useStoreSprints.getState().sprints.find(s => s.id === sprintActiva.id)
+
+                if (sprintActualizado) {
+                    setSprintActiva(sprintActualizado)
+                updateSprintController(sprintActualizado)
+                }
+
+            }else{
+                editTaskSprint(formValues, sprintActiva.id)
+                const sprintActualizado = useStoreSprints.getState().sprints.find(s => s.id === sprintActiva.id)
+
+                if (sprintActualizado) {
+                    setSprintActiva(sprintActualizado)
+                    updateSprintController(sprintActualizado)
+                }
+            }
         }
+
+
         setTareaActiva(null)
         closeModalTask()
     }

@@ -44,7 +44,47 @@
             "titulo": "Tarea backlog",
             "descripcion": "Descripcion tarea backlog",
             "estado": "pendiente",
+<<<<<<< HEAD
             "fechaLimite": "2025-03-05"
+=======
+            "fechaLimite": "2025-04-30"
+          },
+          {
+            "id": "1744377258823",
+            "titulo": "Naranja 47",
+            "descripcion": "Pizza pepperoni 69",
+            "estado": "pendiente",
+            "fechaLimite": "2025-04-25"
+          },
+          {
+            "id": "1744377542076",
+            "titulo": "morado",
+            "descripcion": "morado",
+            "estado": "pendiente",
+            "fechaLimite": "2025-04-06"
+          },
+          {
+            "id": "1744378635611",
+            "titulo": "TAREA",
+            "descripcion": "tarea1",
+            "estado": "pendiente",
+            "fechaLimite": "2025-04-05"
+          }
+        ]
+      },
+      {
+        "id": "1744379005548",
+        "fechaInicio": "2025-04-26",
+        "fechaCierre": "2025-04-30",
+        "nombre": "BENDITO RUFIAN",
+        "tareas": [
+          {
+            "id": "1744479377893",
+            "titulo": "Tarea de bendito rufian",
+            "descripcion": "Pizza pepperoni",
+            "estado": "pendiente",
+            "fechaLimite": "2025-04-30"
+>>>>>>> cc5b4b6e04374733062d19bf0dae7f15d7fd27d1
           }
         ]
       }
