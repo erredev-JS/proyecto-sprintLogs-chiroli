@@ -9,6 +9,8 @@ import { useEffect, useState } from "react"
 import {  useParams } from "react-router-dom"
 import { ISprint } from "../../../types/iSprints"
 
+import { CardTaskInSprint } from "../CardTaskInSprint/CardTaskInSprint"
+
 
 
 export const ListSprint = () => {
@@ -52,10 +54,12 @@ export const ListSprint = () => {
                     <div className={styles.containerTasks}>                       
                     {selectedSprint?.tareas.map(task => (
                             task.estado === 'pendiente' &&
-                            <div>
-                                <p>{task.titulo}</p>
-                                <p>{task.id}</p>
-                            </div>
+                            <div className={styles.listContainer}>
+    
+                             <CardTaskInSprint key={task.id} tarea={task} estado="pendiente" />
+      
+
+    </div>
                         ))}
                     </div>
                 </div>
@@ -66,10 +70,7 @@ export const ListSprint = () => {
                     <div className={styles.containerTasks}>
                     {selectedSprint?.tareas.map(task => (
                             task.estado === 'en_progreso' &&
-                            <div>
-                                <p>{task.titulo}</p>
-                                <p>{task.id}</p>
-                            </div>
+                            <CardTaskInSprint key={task.id} tarea={task} estado="en_progreso" />
                         ))}
                     </div>
                 </div>
@@ -79,10 +80,7 @@ export const ListSprint = () => {
                     <div className={styles.containerTasks}>
                         {selectedSprint?.tareas.map(task => (
                             task.estado === 'finalizada' &&
-                            <div>
-                                <p>{task.titulo}</p>
-                                <p>{task.id}</p>
-                            </div>
+                            <CardTaskInSprint key={task.id} tarea={task} estado="finalizada" />
                         ))}
                     </div>  
                 </div>

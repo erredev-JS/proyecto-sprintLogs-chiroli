@@ -2,18 +2,18 @@
   "backlog": {
     "tareas": [
       {
-        "id": "dcec0ad4-31e0-4279-8ccf-72bd1f20b52d",
-        "titulo": "Tarea backlog",
-        "descripcion": "Descripcion tarea backlog",
-        "estado": "pendiente",
-        "fechaLimite": "2025-03-05"
-      },
-      {
         "id": "1743722650122",
         "titulo": "aaaaaaaa",
         "descripcion": "aaaaaaaaaaaaaaa",
         "estado": "",
         "fechaLimite": "2025-04-06"
+      },
+      {
+        "id": "1744478500774",
+        "titulo": "pijota",
+        "descripcion": "2222222222",
+        "estado": "pendiente",
+        "fechaLimite": "2025-04-10"
       }
     ]
   },
@@ -24,29 +24,7 @@
         "fechaInicio": "2025-03-04",
         "fechaCierre": "2025-03-11",
         "nombre": "Sprint 121",
-        "tareas": [
-          {
-            "id": "50699dec-3d1a-45ff-a94d-82d416eac053",
-            "titulo": "Tarea 2",
-            "descripcion": "Estamos aca",
-            "estado": "pendiente",
-            "fechaLimite": "2025-03-06"
-          },
-          {
-            "id": "dcec0ad4-31e0-4279-8ccf-72bd1f20b52d",
-            "titulo": "Tarea backlog",
-            "descripcion": "Descripcion tarea backlog",
-            "estado": "pendiente",
-            "fechaLimite": "2025-03-05"
-          },
-          {
-            "id": "1744377006791",
-            "titulo": "Naranja",
-            "descripcion": "Pizza pepperoni 2",
-            "estado": "pendiente",
-            "fechaLimite": "2025-04-26"
-          }
-        ]
+        "tareas": []
       },
       {
         "id": "1743723357420",
@@ -62,18 +40,11 @@
             "fechaLimite": "2025-04-26"
           },
           {
-            "id": "1744377110632",
-            "titulo": "Tarea que se borra del Backlog",
-            "descripcion": "Me voy a borrar :c",
+            "id": "dcec0ad4-31e0-4279-8ccf-72bd1f20b52d",
+            "titulo": "Tarea backlog",
+            "descripcion": "Descripcion tarea backlog",
             "estado": "pendiente",
-            "fechaLimite": "2025-04-30"
-          },
-          {
-            "id": "1744377258823",
-            "titulo": "Naranja 47",
-            "descripcion": "Pizza pepperoni 69",
-            "estado": "pendiente",
-            "fechaLimite": "2025-04-25"
+            "fechaLimite": "2025-03-05"
           }
         ]
       }
