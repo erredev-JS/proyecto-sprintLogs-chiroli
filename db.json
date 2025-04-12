@@ -96,7 +96,15 @@
         "fechaInicio": "2025-04-26",
         "fechaCierre": "2025-04-30",
         "nombre": "BENDITO RUFIAN",
-        "tareas": []
+        "tareas": [
+          {
+            "id": "1744479377893",
+            "titulo": "Tarea de bendito rufian",
+            "descripcion": "Pizza pepperoni",
+            "estado": "pendiente",
+            "fechaLimite": "2025-04-30"
+          }
+        ]
       }
     ]
   }

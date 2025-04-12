@@ -19,7 +19,7 @@ export const ModalCard = () => {
         fechaLimite: ""
     }
 
-    const {sprintActiva, addTaskToSprint, editTaskSprint} = useStoreSprints()
+    const {sprintActiva, addTaskToSprint, setSprintActiva, editTaskSprint} = useStoreSprints()
     const {tareaActiva, editTarea, setTareaActiva, addTareaInactiva} = useStoreTareas()
     const {closeModalTask} = useStoreModal()
     const [formValues, setFormValues] = useState<ITareas>(initialStateTarea);
@@ -66,10 +66,22 @@ export const ModalCard = () => {
                 formValues.id = Date.now().toString()
                 formValues.estado = "pendiente"
                 addTaskToSprint(formValues, sprintActiva.id)
-                updateSprintController(sprintActiva)
+
+                const sprintActualizado = useStoreSprints.getState().sprints.find(s => s.id === sprintActiva.id)
+
+                if (sprintActualizado) {
+                    setSprintActiva(sprintActualizado)
+                updateSprintController(sprintActualizado)
+                }
+
             }else{
                 editTaskSprint(formValues, sprintActiva.id)
-                updateSprintController(sprintActiva)
+                const sprintActualizado = useStoreSprints.getState().sprints.find(s => s.id === sprintActiva.id)
+
+                if (sprintActualizado) {
+                    setSprintActiva(sprintActualizado)
+                    updateSprintController(sprintActualizado)
+                }
             }
         }
 
