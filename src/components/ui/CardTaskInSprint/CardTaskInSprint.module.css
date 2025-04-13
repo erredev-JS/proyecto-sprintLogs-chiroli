@@ -1,7 +1,7 @@
 
 .taskCard{
     display: flex;
-    width: 80%;
+    width: 300px;
     margin: 0 auto;
     justify-content: space-between;
     padding: 10px;
@@ -11,33 +11,49 @@
     border-radius: 8px;
     margin-top: 10px;
     flex-direction: column;
+    padding: 20px;
+   
 }
-
 .buttonsResponsive{
-    display: flex;
- 
-    flex-direction: row;
-    width:50%;
-    align-items: center;
-    
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 auto;
+
+  align-items: center;
 }
 
 .cardButtons{
    
-    width: 50%;
+    width: 80%;
     display: flex;
     justify-content: space-between;
 }
+
+.cardEstado {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .estadoTexto {
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  
 
 @media (max-width: 850px) {
     .taskCard{
         flex-direction: column;
         height: 200px;
+        width: 300px;
     }
     .buttonsResponsive{
         display: flex;
         width: 100%;
-        justify-content: space-around;
+        flex-direction: column;
+        gap: 10px;
         margin: 0 auto;
     }
 
@@ -65,3 +81,43 @@
     background-color: #d46363 !important ;
   
   }
+
+
+  .buttonState{
+    display: flex;
+    background-color: #6B63D4;
+    
+    color: white;
+   
+    width: 160px;
+    justify-content: space-between;
+    border-radius: 8px;
+    align-items: center;
+  }
+
+  .btnInState{
+    font-size: 18px;
+    background-color: hsl(244, 27%, 42%);
+    border: none;
+   padding: 5px;
+   
+  }
+
+  .btnInState:first-child{
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+
+  .btnInState:last-child{
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+
+  button:active {
+    background-color: inherit;
+    transform: none;
+    box-shadow: none;
+  }
+  
+
+

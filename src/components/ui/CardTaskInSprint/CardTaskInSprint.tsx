@@ -61,10 +61,6 @@ export const CardTaskInSprint: FC<CardTaskInSprint> = ({tarea, estado}) => {
     openModalViewTask()
   }
 
-  const handleOpenModalSendTask = (tarea : ITareas) =>{
-    setTareaActiva(tarea)
-    openModalTaskSend()
-  }
 
 
   const handleDeleteTarea = async () => {
@@ -83,6 +79,35 @@ export const CardTaskInSprint: FC<CardTaskInSprint> = ({tarea, estado}) => {
     }
   };
 
+  const cambiarEstadoTarea = async (direccion: number) => {
+    if (!sprintActiva) return;
+  
+    const estados = ["pendiente", "en_progreso", "finalizada"];
+    const indiceActual = estados.indexOf(tarea.estado);
+    const nuevoIndice = indiceActual + direccion;
+  
+    // Evitar índices fuera de rango
+    if (nuevoIndice < 0 || nuevoIndice >= estados.length) return;
+  
+    const tareaActualizada: ITareas = {
+      ...tarea,
+      estado: estados[nuevoIndice],
+    };
+  
+    const tareasActualizadas = sprintActiva.tareas.map((t) =>
+      t.id === tarea.id ? tareaActualizada : t
+    );
+  
+    const nuevaSprint = {
+      ...sprintActiva,
+      tareas: tareasActualizadas,
+    };
+  
+    await updateSprintController(nuevaSprint);
+    useStoreSprints.getState().editTaskSprint(tareaActualizada, sprintActiva.id);
+  };
+  
+
   return (
     <>
         <div className={styles.taskCard}>
@@ -94,7 +119,24 @@ export const CardTaskInSprint: FC<CardTaskInSprint> = ({tarea, estado}) => {
             <div className={styles.buttonsResponsive}>
 
             <div className={styles.cardSend}>
-            <Button onClick={() => handleOpenModalSendTask(tarea)}  style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }} className={styles.btnCustom}>{estado}</Button>
+            <div className={styles.buttonState}>
+
+            <button
+           className={styles.btnInState}
+           onClick={() => cambiarEstadoTarea(-1)}
+           disabled={tarea.estado === "pendiente"}
+           >
+           ⬅️
+          </button>
+  <span className={styles.estadoTexto}>{tarea.estado}</span>
+  <button
+    className={styles.btnInState}
+    onClick={() => cambiarEstadoTarea(1)}
+    disabled={tarea.estado === "finalizada"}
+    >
+    ➡️
+  </button>
+    </div>
             </div>
             <div className={styles.cardButtons}>
             <Button onClick={() => handleOpenModalView(tarea)} style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }}  className={styles.btnCustom}><img src={viewIcon} /></Button>

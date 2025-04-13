@@ -24,7 +24,29 @@
         "fechaInicio": "2025-03-04",
         "fechaCierre": "2025-03-11",
         "nombre": "Sprint 121",
-        "tareas": []
+        "tareas": [
+          {
+            "id": "1744503841520",
+            "titulo": "666",
+            "descripcion": "2",
+            "estado": "en progreso",
+            "fechaLimite": ""
+          },
+          {
+            "id": "1744504284192",
+            "titulo": "rik ifort",
+            "descripcion": "22",
+            "estado": "finalizada",
+            "fechaLimite": "2025-04-06"
+          },
+          {
+            "id": "1744583708804",
+            "titulo": "aaaaaaaaaa",
+            "descripcion": "2222222222",
+            "estado": "pendiente",
+            "fechaLimite": ""
+          }
+        ]
       },
       {
         "id": "1743723357420",

@@ -4,13 +4,15 @@ import { Aside } from '../../ui/Aside/Aside'
 import { Header } from '../../ui/Header/Header'
 import { ListSprint } from '../../ui/ListSprint/ListSprint'
 import { ModalCard } from '../../ui/ModalCard/ModalCard'
+import { ModalSendTaskToSprint } from '../../ui/ModalSendTaskToSprint/ModalSendTaskToSprint'
 import ModalSprint from '../../ui/ModalSprint/ModalSprint'
+import { ModalViewCard } from '../../ui/ModalViewCard/ModalViewCard'
 
 import styles from './SprintScreen.module.css'
 
 export const SprintScreen = () => {
 
-    const {openTask, openSprint} = useStoreModal()
+  const {openViewTask, openTask, openSprint} = useStoreModal()
     
 
     
@@ -22,8 +24,11 @@ export const SprintScreen = () => {
         <Aside/>
         <ListSprint/>
       </div>
-      {openTask && <ModalCard/>} 
       {openSprint && <ModalSprint/>}
+      {openTask && <ModalCard/>}
+      {openViewTask && <ModalViewCard/>}
+
+      
     </div>
   )
 }
