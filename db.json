@@ -9,11 +9,18 @@
         "fechaLimite": "2025-04-06"
       },
       {
-        "id": "1744478500774",
-        "titulo": "pijota",
+        "id": "1744595472549",
+        "titulo": "Tarea de moski2 viajará a blackog",
+        "descripcion": "Voy a viajar :O",
+        "estado": "en_progreso",
+        "fechaLimite": "2025-04-15"
+      },
+      {
+        "id": "1744583708804",
+        "titulo": "aaaaaaaaaa",
         "descripcion": "2222222222",
-        "estado": "pendiente",
-        "fechaLimite": "2025-04-10"
+        "estado": "en_progreso",
+        "fechaLimite": ""
       }
     ]
   },
@@ -35,16 +42,9 @@
           {
             "id": "1744504284192",
             "titulo": "rik ifort",
-            "descripcion": "22",
+            "descripcion": "23",
             "estado": "finalizada",
             "fechaLimite": "2025-04-06"
-          },
-          {
-            "id": "1744583708804",
-            "titulo": "aaaaaaaaaa",
-            "descripcion": "2222222222",
-            "estado": "pendiente",
-            "fechaLimite": ""
           }
         ]
       },

@@ -30,7 +30,7 @@ export const ListBacklog = () => {
       const firstGetTareas = async () => {
         const tareas = await getAllTareasController();
         setTareas(tareas ?? []);
-        console.log(tareas)
+        
       }
 
       

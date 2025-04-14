@@ -50,6 +50,17 @@
 
 } 
 
+.btnCustom {
+    background-color: #6B63D4 !important;
+    border: none !important;
+    outline: none !important; /* Evita el borde al hacer clic */
+    box-shadow: none !important; /* Evita el resaltado al enfocar */
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 @media (max-width: 1000px) {
     .containercontentFlex {
         display: flex;

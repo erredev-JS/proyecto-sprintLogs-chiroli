@@ -49,7 +49,7 @@ export const ListSprint = () => {
             <div className={styles.containerTitle}>
                 <h2>Tareas de la {selectedSprint?.nombre}</h2>
                 <div className={styles.containerButton}>
-                    <Button onClick={openModalTask}>Crear Tarea</Button>
+                    <Button onClick={openModalTask} className={`${styles.btnCustom}`}>Crear Tarea</Button>
                 </div>
             </div>
 

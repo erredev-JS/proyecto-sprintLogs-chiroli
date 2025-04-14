@@ -5,7 +5,7 @@ import { FC } from "react"
 import { useStoreModal } from "../../../store/useStoreModal"
 import useStoreTareas from "../../../store/useStoreTareas"
 import Swal from "sweetalert2"
-import { deleteTareaController } from "../../../data/tareaController"
+import { createTareaController, deleteTareaController } from "../../../data/tareaController"
 import viewIcon from '../../../assets/viewIcon.svg'
 import editIcon from '../../../assets/editIcon.svg'
 import deleteIcon from '../../../assets/deleteIcon.svg'
@@ -51,6 +51,8 @@ export const CardTaskInSprint: FC<CardTaskInSprint> = ({tarea, estado}) => {
 
   const setTareaActiva = useStoreTareas((state) => state.setTareaActiva)
 
+  const {addTareaInactiva} = useStoreTareas()
+
 
   const handleOpenModalTareaEdit = (tarea: ITareas)=> {
     setTareaActiva(tarea)
@@ -78,6 +80,19 @@ export const CardTaskInSprint: FC<CardTaskInSprint> = ({tarea, estado}) => {
       deleteTaskSprint(tarea.id, sprintActiva.id);
     }
   };
+
+  const handleSendTaskToBacklog = async () => {
+    if (!sprintActiva) return;
+    await deleteTaskSprint(tarea.id, sprintActiva.id);
+
+    const sprintActualizada = useStoreSprints.getState().sprints.find((sprint) => sprint.id === sprintActiva.id);
+
+    if(!sprintActualizada) return
+
+    await updateSprintController(sprintActualizada)
+    addTareaInactiva(tarea)
+    createTareaController(tarea)
+  }
 
   const cambiarEstadoTarea = async (direccion: number) => {
     if (!sprintActiva) return;
@@ -141,6 +156,7 @@ export const CardTaskInSprint: FC<CardTaskInSprint> = ({tarea, estado}) => {
             <div className={styles.cardButtons}>
             <Button onClick={() => handleOpenModalView(tarea)} style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }}  className={styles.btnCustom}><img src={viewIcon} /></Button>
             <Button  style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }} onClick={()=>handleOpenModalTareaEdit(tarea)}  className={styles.btnCustom}><img src={editIcon} /></Button>
+            <Button style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }} onClick={handleSendTaskToBacklog} >Enviar al Backlog</Button>
             <Button variant='danger' onClick={handleDeleteTarea} className={styles.btnCustomDelete}> <img src={deleteIcon}  /></Button>
             </div>
             </div>
