@@ -2,11 +2,32 @@
   "backlog": {
     "tareas": [
       {
-        "id": "dcec0ad4-31e0-4279-8ccf-72bd1f20b52d",
-        "titulo": "Tarea backlog",
-        "descripcion": "Descripcion tarea backlog",
+        "id": "1743722650122",
+        "titulo": "aaaaaaaa",
+        "descripcion": "aaaaaaaaaaaaaaa",
+        "estado": "",
+        "fechaLimite": "2025-04-06"
+      },
+      {
+        "id": "1744595472549",
+        "titulo": "Tarea de moski2 viajará a blackog",
+        "descripcion": "Voy a viajar :O",
+        "estado": "en_progreso",
+        "fechaLimite": "2025-04-15"
+      },
+      {
+        "id": "1744583708804",
+        "titulo": "aaaaaaaaaa",
+        "descripcion": "2222222222",
+        "estado": "en_progreso",
+        "fechaLimite": ""
+      },
+      {
+        "id": "1744718418756",
+        "titulo": "pijota",
+        "descripcion": "",
         "estado": "pendiente",
-        "fechaLimite": "2025-03-05"
+        "fechaLimite": ""
       }
     ]
   },
@@ -26,18 +47,25 @@
             "fechaLimite": "2025-03-06"
           },
           {
-            "id": "dcec0ad4-31e0-4279-8ccf-72bd1f20b52d",
-            "titulo": "Tarea backlog",
-            "descripcion": "Descripcion tarea backlog",
-            "estado": "pendiente",
-            "fechaLimite": "2025-03-05"
+            "id": "1744504284192",
+            "titulo": "rik ifort",
+            "descripcion": "23",
+            "estado": "finalizada",
+            "fechaLimite": "2025-04-06"
           },
           {
-            "id": "1744377006791",
-            "titulo": "Naranja",
-            "descripcion": "Pizza pepperoni 2",
+            "id": "1744718685625",
+            "titulo": "a",
+            "descripcion": "",
             "estado": "pendiente",
-            "fechaLimite": "2025-04-26"
+            "fechaLimite": ""
+          },
+          {
+            "id": "1744718781813",
+            "titulo": "a",
+            "descripcion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "estado": "en_progreso",
+            "fechaLimite": "2025-05-02"
           }
         ]
       },
