@@ -47,6 +47,21 @@
         "fechaCierre": "2025-04-12",
         "nombre": "Sprint2",
         "tareas": []
+      },
+      {
+        "id": "1744715235442",
+        "fechaInicio": "2025-05-04",
+        "fechaCierre": "2025-05-11",
+        "nombre": "Sprint2",
+        "tareas": [
+          {
+            "id": "1744715248170",
+            "titulo": "TAREA1",
+            "descripcion": "tarea1",
+            "estado": "finalizada",
+            "fechaLimite": "2025-04-11"
+          }
+        ]
       }
     ]
   }

@@ -79,11 +79,11 @@ const ModalSprint = () => {
             </div>
             <div>
                 <form className={styles.containerForm}  onSubmit={handleSubmit} action="">
-                    <input type="text" name="nombre" id="" placeholder='Titulo' value={formValues.nombre} onChange={handleChange} />
+                    <input type="text" name="nombre" id="" placeholder='Titulo' required value={formValues.nombre} onChange={handleChange} />
                     <label htmlFor="">Fecha Inicio</label>
-                    <input type="date" name="fechaInicio" id="" value={formValues.fechaInicio} onChange={handleChange}/>
+                    <input type="date" name="fechaInicio" id="" required value={formValues.fechaInicio} onChange={handleChange}/>
                     <label htmlFor="">Fecha Cierre</label>
-                    <input type="date" name="fechaCierre" id="" placeholder='Fecha Cierre' value={formValues.fechaCierre} onChange={handleChange}/>
+                    <input type="date" name="fechaCierre" id="" placeholder='Fecha Cierre' required value={formValues.fechaCierre} onChange={handleChange}/>
                     <div className={styles.containerButtons}>
                         <Button variant='danger' onClick={handleCloseModalSprint}>Cancelar</Button> 
                         <Button type='submit' variant='success'>Aceptar</Button>

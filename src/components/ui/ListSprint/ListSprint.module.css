@@ -18,19 +18,26 @@
     height: 80vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
+ 
+    overflow-y: auto;
+    overflow-x: auto;
+    gap: 4rem;
+   width: 63vw;
+   margin: 0 auto;
 }
 .containerContentTasks{
-    width: 25vw;
+  
     padding: 10px;
-    margin-left: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
 }
 
 .containerTasks{
-    width: 90%;
-    height: 100%;
+   
+    width: 100%;
+    min-width: 400px;
     background-color: rgb(198, 197, 197);
     border-radius: 10px;
     box-shadow: 2px 5px 15px;
@@ -38,10 +45,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-y: auto;
+    height: 100%;
 
 } 
 
-@media (max-width: 800px) {
+.btnCustom {
+    background-color: #6B63D4 !important;
+    border: none !important;
+    outline: none !important; /* Evita el borde al hacer clic */
+    box-shadow: none !important; /* Evita el resaltado al enfocar */
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media (max-width: 1000px) {
     .containercontentFlex {
         display: flex;
         flex-direction: column;
@@ -51,7 +71,7 @@
     .containerContentTasks{
         width: 100%;
         align-items: start;
-        height: 30vh;
+        min-height: 300px;
     }
 
     
