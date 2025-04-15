@@ -1,6 +1,8 @@
-
+*{
+    box-sizing: border-box;
+}
 .containerPrincipal{
-    width: 90vw;
+    width: 100vw;
     padding: 0;
     margin: 0;
 }
@@ -15,18 +17,18 @@
     padding-left: 5vw ;
 }
 .containercontentFlex{
-    height: 80vh;
+    height: 73vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
  
     overflow-y: auto;
     overflow-x: auto;
     gap: 4rem;
-   width: 63vw;
+   width: 58vw;
    margin: 0 auto;
 }
 .containerContentTasks{
-  
+    
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -37,7 +39,7 @@
 .containerTasks{
    
     width: 100%;
-    min-width: 400px;
+    
     background-color: rgb(198, 197, 197);
     border-radius: 10px;
     box-shadow: 2px 5px 15px;

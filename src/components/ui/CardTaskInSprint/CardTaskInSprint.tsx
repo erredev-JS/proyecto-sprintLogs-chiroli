@@ -131,7 +131,8 @@ export const CardTaskInSprint: FC<CardTaskInSprint> = ({tarea, estado}) => {
         <div className={styles.taskCard}>
             <div className={styles.cardInfo}>
             <p>Titulo: {tarea.titulo}</p>
-            <p>Descripcion: {tarea.descripcion}</p>
+            <p>Descripcion:</p>
+            <p>{tarea.descripcion}</p>
 
             </div>
             <div className={styles.buttonsResponsive}>
@@ -156,10 +157,10 @@ export const CardTaskInSprint: FC<CardTaskInSprint> = ({tarea, estado}) => {
   </button>
     </div>
             </div>
+            <Button style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white", width: "160px" }} onClick={handleSendTaskToBacklog} >Enviar al Backlog</Button>
             <div className={styles.cardButtons}>
             <Button onClick={() => handleOpenModalView(tarea)} style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }}  className={styles.btnCustom}><img src={viewIcon} /></Button>
             <Button  style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }} onClick={()=>handleOpenModalTareaEdit(tarea)}  className={styles.btnCustom}><img src={editIcon} /></Button>
-            <Button style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }} onClick={handleSendTaskToBacklog} >Enviar al Backlog</Button>
             <Button variant='danger' onClick={handleDeleteTarea} className={styles.btnCustomDelete}> <img src={deleteIcon}  /></Button>
             </div>
             </div>
