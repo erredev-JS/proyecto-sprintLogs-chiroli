@@ -11,6 +11,7 @@ import editIcon from '../../../assets/editIcon.svg'
 import deleteIcon from '../../../assets/deleteIcon.svg'
 import { updateSprintController } from "../../../data/sprintController"
 import useStoreSprints from "../../../store/useStoreSprints"
+import { popUpSweetAlert } from "../../../utils/popUpSweetAlert"
 
 
 
@@ -92,6 +93,8 @@ export const CardTaskInSprint: FC<CardTaskInSprint> = ({tarea, estado}) => {
     await updateSprintController(sprintActualizada)
     addTareaInactiva(tarea)
     createTareaController(tarea)
+
+    popUpSweetAlert("Tarea enviada al Backlog", "La tarea está en el backlog ahora");
   }
 
   const cambiarEstadoTarea = async (direccion: number) => {

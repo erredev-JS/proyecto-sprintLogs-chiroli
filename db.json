@@ -9,18 +9,25 @@
         "fechaLimite": "2025-04-06"
       },
       {
-        "id": "1744595472549",
-        "titulo": "Tarea de moski2 viajará a blackog",
-        "descripcion": "Voy a viajar :O",
-        "estado": "en_progreso",
-        "fechaLimite": "2025-04-15"
-      },
-      {
         "id": "1744583708804",
         "titulo": "aaaaaaaaaa",
         "descripcion": "2222222222",
         "estado": "en_progreso",
         "fechaLimite": ""
+      },
+      {
+        "id": "1744719139027",
+        "titulo": "BOCA GOTY",
+        "descripcion": "Pizza pepperoni",
+        "estado": "pendiente",
+        "fechaLimite": "2025-04-17"
+      },
+      {
+        "id": "1744595472549",
+        "titulo": "Tarea de moski2 viajará a blackog",
+        "descripcion": "Voy a viajar :O",
+        "estado": "pendiente",
+        "fechaLimite": "2025-04-15"
       }
     ]
   },

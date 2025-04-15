@@ -58,7 +58,7 @@ export const ModalCard = () => {
             }else{
                 updateTareaController(formValues)
                 editTarea(formValues)
-                
+
             }
         }else{
             if(!tareaActiva){
