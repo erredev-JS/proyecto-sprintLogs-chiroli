@@ -40,11 +40,11 @@
         "nombre": "Sprint 121",
         "tareas": [
           {
-            "id": "1744503841520",
-            "titulo": "666",
-            "descripcion": "2",
-            "estado": "en progreso",
-            "fechaLimite": ""
+            "id": "50699dec-3d1a-45ff-a94d-82d416eac053",
+            "titulo": "Tarea 2",
+            "descripcion": "Estamos aca",
+            "estado": "pendiente",
+            "fechaLimite": "2025-03-06"
           },
           {
             "id": "1744718685625",
@@ -70,17 +70,24 @@
         ]
       },
       {
-        "id": "1743723357420",
+        "id": "1744398927151",
         "fechaInicio": "2025-04-11",
-        "fechaCierre": "2025-05-10",
-        "nombre": "moski 2",
+        "fechaCierre": "2025-04-12",
+        "nombre": "Sprint2",
+        "tareas": []
+      },
+      {
+        "id": "1744715235442",
+        "fechaInicio": "2025-05-04",
+        "fechaCierre": "2025-05-11",
+        "nombre": "Sprint2",
         "tareas": [
           {
-            "id": "1744371108395",
-            "titulo": "Naranja",
-            "descripcion": "Pizza pepperoni",
-            "estado": "",
-            "fechaLimite": "2025-04-26"
+            "id": "1744715248170",
+            "titulo": "TAREA1",
+            "descripcion": "tarea1",
+            "estado": "finalizada",
+            "fechaLimite": "2025-04-11"
           }
         ]
       }

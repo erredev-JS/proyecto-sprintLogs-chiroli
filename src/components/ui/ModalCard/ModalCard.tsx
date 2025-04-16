@@ -99,13 +99,13 @@ export const ModalCard = () => {
                 </div>
                 <div>
                     <form onSubmit={handleSubmit} className={styles.containerForm} action="">
-                        <input type="text" name="titulo" id="" placeholder='Titulo' value={formValues.titulo}
+                        <input type="text" name="titulo" id="" placeholder='Titulo' required value={formValues.titulo}
                         onChange={handleChange}/>
                     
-                        <input type="text" name="descripcion" id="" placeholder='Descripcion' value={formValues.descripcion}
+                        <input type="text" name="descripcion" id="" placeholder='Descripcion' required value={formValues.descripcion}
                         onChange={handleChange}/>
                         <label htmlFor="">Fecha Limite</label>
-                        <input type="date" name="fechaLimite" id="" placeholder='Fecha Limite' value={formValues.fechaLimite}
+                        <input type="date" name="fechaLimite" id="" placeholder='Fecha Limite' required value={formValues.fechaLimite}
                         onChange={handleChange}/>
 
                     
