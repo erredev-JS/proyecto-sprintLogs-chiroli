@@ -23,30 +23,9 @@ type CardTaskInSprint = {
 
 export const CardTaskInSprint: FC<CardTaskInSprint> = ({tarea, estado}) => {
 
-
- /*  const handleSendTask = async () => {
-          if(!sprintSeleccionada || !tareaActiva) return // Si no hay seleccionada una sprint o no hay tarea activa corta el handle
-  
-          const sprintUpdate = sprints.find((sprint) => sprint.id === sprintSeleccionada)
-  
-          if (!sprintUpdate) return 
-  
-          const newSprint = {
-              ...sprintUpdate, tareas: [...sprintUpdate.tareas, tareaActiva]
-          }
-  
-          await updateSprintController(newSprint)
-  
-          addTaskToSprint(tareaActiva, sprintSeleccionada) // Actualizo el estado
-          deleteTareaController(tareaActiva.id)
-          setTareaActiva(null)
-          
-          closeModalTaskSend()
-  
-*/
   const sprintActiva = useStoreSprints((state) => state.sprintActiva)
 
-  const {openModalTask, openModalViewTask, openModalTaskSend} = useStoreModal()
+  const {openModalTask, openModalViewTask } = useStoreModal()
 
   const {deleteTaskSprint} = useStoreSprints()
 

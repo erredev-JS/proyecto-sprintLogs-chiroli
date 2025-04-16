@@ -2,13 +2,6 @@
   "backlog": {
     "tareas": [
       {
-        "id": "1743722650122",
-        "titulo": "aaaaaaaa",
-        "descripcion": "aaaaaaaaaaaaaaa",
-        "estado": "",
-        "fechaLimite": "2025-04-06"
-      },
-      {
         "id": "1744583708804",
         "titulo": "aaaaaaaaaa",
         "descripcion": "2222222222",
@@ -21,6 +14,20 @@
         "descripcion": "",
         "estado": "pendiente",
         "fechaLimite": ""
+      },
+      {
+        "id": "1744721465851",
+        "titulo": "Tarea Moski 2",
+        "descripcion": " :O",
+        "estado": "pendiente",
+        "fechaLimite": "2025-04-25"
+      },
+      {
+        "id": "1744718781813",
+        "titulo": "a",
+        "descripcion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "estado": "en_progreso",
+        "fechaLimite": "2025-05-02"
       }
     ]
   },
@@ -40,13 +47,6 @@
             "fechaLimite": ""
           },
           {
-            "id": "1744504284192",
-            "titulo": "rik ifort",
-            "descripcion": "23",
-            "estado": "finalizada",
-            "fechaLimite": "2025-04-06"
-          },
-          {
             "id": "1744718685625",
             "titulo": "a",
             "descripcion": "",
@@ -54,11 +54,18 @@
             "fechaLimite": ""
           },
           {
-            "id": "1744718781813",
-            "titulo": "a",
-            "descripcion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-            "estado": "en_progreso",
-            "fechaLimite": "2025-05-02"
+            "id": "1743722650122",
+            "titulo": "aaaaaaaa",
+            "descripcion": "aaaaaaaaaaaaaaa",
+            "estado": "",
+            "fechaLimite": "2025-04-06"
+          },
+          {
+            "id": "1744504284192",
+            "titulo": "rik ifort",
+            "descripcion": "",
+            "estado": "finalizada",
+            "fechaLimite": "2025-04-06"
           }
         ]
       },
