@@ -8,6 +8,7 @@ import useStoreTareas from '../../../store/useStoreTareas'
 import { createTareaController, updateTareaController } from '../../../data/tareaController'
 import useStoreSprints from '../../../store/useStoreSprints'
 import { updateSprintController } from '../../../data/sprintController'
+import { bigSweetAlertPopup } from '../../../utils/bigSweetAlertPopup'
 
 
 export const ModalCard = () => {
@@ -55,9 +56,11 @@ export const ModalCard = () => {
                 formValues.estado = "pendiente"
                 createTareaController(formValues)
                 addTareaInactiva(formValues)
+                bigSweetAlertPopup("Tarea creada")
             }else{
                 updateTareaController(formValues)
                 editTarea(formValues)
+                bigSweetAlertPopup("Tarea actualizada")
 
             }
         }else{
@@ -72,6 +75,8 @@ export const ModalCard = () => {
                 if (sprintActualizado) {
                     setSprintActiva(sprintActualizado)
                 updateSprintController(sprintActualizado)
+                bigSweetAlertPopup("Tarea creada en la Sprint")
+
                 }
 
             }else{
@@ -81,6 +86,8 @@ export const ModalCard = () => {
                 if (sprintActualizado) {
                     setSprintActiva(sprintActualizado)
                     updateSprintController(sprintActualizado)
+                    bigSweetAlertPopup("Tarea actualizada")
+
                 }
             }
         }

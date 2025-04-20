@@ -6,6 +6,7 @@ import { useStoreModal } from '../../../store/useStoreModal'
 import { useState } from 'react'
 import { updateSprintController } from '../../../data/sprintController'
 import { deleteTareaController } from '../../../data/tareaController'
+import { bigSweetAlertPopup } from '../../../utils/bigSweetAlertPopup'
 
 // interface IModalSendTaskToSprint {
 //     tarea : ITareas
@@ -36,6 +37,8 @@ export const ModalSendTaskToSprint  = () => {
         }
 
         await updateSprintController(newSprint)
+        bigSweetAlertPopup("Tarea enviada a la Sprint")
+
 
         addTaskToSprint(tareaActiva, sprintSeleccionada) // Actualizo el estado
         deleteTareaController(tareaActiva.id)

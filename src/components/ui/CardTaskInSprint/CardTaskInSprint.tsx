@@ -4,7 +4,6 @@ import { ITareas } from "../../../types/ITareas"
 import { FC } from "react"
 import { useStoreModal } from "../../../store/useStoreModal"
 import useStoreTareas from "../../../store/useStoreTareas"
-import Swal from "sweetalert2"
 import { createTareaController, deleteTareaController } from "../../../data/tareaController"
 import viewIcon from '../../../assets/viewIcon.svg'
 import editIcon from '../../../assets/editIcon.svg'
@@ -12,6 +11,8 @@ import deleteIcon from '../../../assets/deleteIcon.svg'
 import { updateSprintController } from "../../../data/sprintController"
 import useStoreSprints from "../../../store/useStoreSprints"
 import { popUpSweetAlert } from "../../../utils/popUpSweetAlert"
+import { bigSweetAlertPopup } from "../../../utils/bigSweetAlertPopup"
+import Swal from "sweetalert2"
 
 
 
@@ -46,21 +47,50 @@ export const CardTaskInSprint: FC<CardTaskInSprint> = ({tarea, estado}) => {
 
 
   const handleDeleteTarea = async () => {
-    if (sprintActiva) {
-      // 1. Crear nueva lista de tareas
-      const tareasActualizadas = sprintActiva.tareas.filter(t => t.id !== tarea.id);
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger"
+      },
+      buttonsStyling: true
+    });
   
-      // 2. Crear nueva sprint actualizada
-      const nuevaSprint = { ...sprintActiva, tareas: tareasActualizadas };
+    const result = await swalWithBootstrapButtons.fire({
+      title: "¿Eliminar Tarea?",
+      text: "Esta acción no se puede revertir!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Sí, eliminar!",
+      cancelButtonText: "Cancelar",
+      reverseButtons: true
+    });
   
-      // 3. Enviar al backend
-      await updateSprintController(nuevaSprint);
+    if (result.isConfirmed) {
+      if (sprintActiva) {
+        try {
+          // 1. Nueva lista de tareas sin la que se quiere eliminar
+          const tareasActualizadas = sprintActiva.tareas.filter(t => t.id !== tarea.id);
   
-      // 4. Actualizar store
-      deleteTaskSprint(tarea.id, sprintActiva.id);
+          // 2. Nueva sprint actualizada
+          const nuevaSprint = { ...sprintActiva, tareas: tareasActualizadas };
+  
+          // 3. Backend
+          await updateSprintController(nuevaSprint);
+  
+          // 4. Estado local
+          deleteTaskSprint(tarea.id, sprintActiva.id);
+  
+          // 5. Alerta final (sin sombra gris, abajo derecha, customizada)
+          bigSweetAlertPopup("Tarea eliminada correctamente");
+        } catch (error) {
+          Swal.fire("Error", "No se pudo eliminar la tarea.", "error");
+        }
+      }
+    } else if (result.dismiss === Swal.DismissReason.cancel) {
+      Swal.fire("Cancelado", "La tarea no fue eliminada.", "info");
     }
   };
-
+  
   const handleSendTaskToBacklog = async () => {
     if (!sprintActiva) return;
     await deleteTaskSprint(tarea.id, sprintActiva.id);
@@ -101,6 +131,7 @@ export const CardTaskInSprint: FC<CardTaskInSprint> = ({tarea, estado}) => {
     };
   
     await updateSprintController(nuevaSprint);
+    popUpSweetAlert("Estado cambiado", "El estado de la tarea ha sido cambiado");
     useStoreSprints.getState().editTaskSprint(tareaActualizada, sprintActiva.id);
   };
   

@@ -4,7 +4,6 @@ import { Aside } from '../../ui/Aside/Aside'
 import { Header } from '../../ui/Header/Header'
 import { ListSprint } from '../../ui/ListSprint/ListSprint'
 import { ModalCard } from '../../ui/ModalCard/ModalCard'
-import { ModalSendTaskToSprint } from '../../ui/ModalSendTaskToSprint/ModalSendTaskToSprint'
 import ModalSprint from '../../ui/ModalSprint/ModalSprint'
 import { ModalViewCard } from '../../ui/ModalViewCard/ModalViewCard'
 

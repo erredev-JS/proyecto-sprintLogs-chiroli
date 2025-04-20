@@ -23,11 +23,18 @@
         "fechaLimite": "2025-04-25"
       },
       {
-        "id": "1744718781813",
-        "titulo": "a",
-        "descripcion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-        "estado": "en_progreso",
-        "fechaLimite": "2025-05-02"
+        "id": "1745106808564",
+        "titulo": "Llegaron las Pipshash",
+        "descripcion": "Pizza pepperoni",
+        "estado": "pendiente",
+        "fechaLimite": "2025-04-30"
+      },
+      {
+        "id": "1745106890184",
+        "titulo": "Bendito Tarea rufian Sprint",
+        "descripcion": "32",
+        "estado": "pendiente",
+        "fechaLimite": "2025-04-08"
       }
     ]
   },
@@ -77,19 +84,11 @@
         "tareas": []
       },
       {
-        "id": "1744715235442",
-        "fechaInicio": "2025-05-04",
-        "fechaCierre": "2025-05-11",
-        "nombre": "Sprint2",
-        "tareas": [
-          {
-            "id": "1744715248170",
-            "titulo": "TAREA1",
-            "descripcion": "tarea1",
-            "estado": "finalizada",
-            "fechaLimite": "2025-04-11"
-          }
-        ]
+        "id": "1745102277783",
+        "fechaInicio": "2025-04-03",
+        "fechaCierre": "2025-04-18",
+        "nombre": "BENDITO RUFIAN",
+        "tareas": []
       }
     ]
   }
