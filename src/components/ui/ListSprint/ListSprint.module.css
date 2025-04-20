@@ -18,12 +18,12 @@
 }
 .containercontentFlex{
     height: 73vh;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
+    display: flex;
     overflow-y: auto;
     overflow-x: auto;
-   width: 58vw;
    margin: 0 auto;
+   justify-content: space-around;
+   border: 1px solid;
 }
 .containerContentTasks{
     
@@ -45,7 +45,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     height: 100%;
-    width: 200px;
+    width: 240px;
     margin: 0 auto;
 
 } 
@@ -74,5 +74,8 @@
         min-height: 300px;
     }
 
+    .containerTasks{
+        width: 240px;
+    }
     
 }

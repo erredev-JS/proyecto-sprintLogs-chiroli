@@ -1,7 +1,7 @@
 
 .taskCard{
     display: flex;
-    width: 160px;
+    width: 200px;
     margin: 0 auto;
     align-items: center;
     height: 260px;
@@ -9,8 +9,8 @@
     border-radius: 8px;
     margin-top: 10px;
     flex-direction: column;
-    padding:16px;
     font-size: 12px;
+    padding: 20px;
    
 }
 .buttonsResponsive{
@@ -110,10 +110,10 @@
   
   
   
-  @media (max-width: 850px) {
+  @media (max-width: 1000px) {
       .taskCard{
           flex-direction: column;
-          width: 160px;
+          width: 200px;
           padding: 10px 0;
       }
       .buttonsResponsive{
