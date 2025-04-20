@@ -20,10 +20,8 @@
     height: 73vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
- 
     overflow-y: auto;
     overflow-x: auto;
-    gap: 4rem;
    width: 58vw;
    margin: 0 auto;
 }
@@ -37,9 +35,6 @@
 }
 
 .containerTasks{
-   
-    width: 100%;
-    
     background-color: rgb(198, 197, 197);
     border-radius: 10px;
     box-shadow: 2px 5px 15px;
@@ -48,7 +43,10 @@
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
+    overflow-x: hidden;
     height: 100%;
+    width: 200px;
+    margin: 0 auto;
 
 } 
 

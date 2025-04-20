@@ -142,7 +142,7 @@ export const CardTaskInSprint: FC<CardTaskInSprint> = ({tarea, estado}) => {
             <div className={styles.cardInfo}>
             <p>Titulo: {tarea.titulo}</p>
             <p>Descripcion:</p>
-            <p>{tarea.descripcion}</p>
+            <p className={styles.descripcionText}>{tarea.descripcion}</p>
 
             </div>
             <div className={styles.buttonsResponsive}>
@@ -167,11 +167,11 @@ export const CardTaskInSprint: FC<CardTaskInSprint> = ({tarea, estado}) => {
   </button>
     </div>
             </div>
-            <Button style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white", width: "160px" }} onClick={handleSendTaskToBacklog} >Enviar al Backlog</Button>
+            <Button style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white", width: "120px", fontSize:"12px" }} onClick={handleSendTaskToBacklog} >Enviar al Backlog</Button>
             <div className={styles.cardButtons}>
-            <Button onClick={() => handleOpenModalView(tarea)} style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }}  className={styles.btnCustom}><img src={viewIcon} /></Button>
-            <Button  style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }} onClick={()=>handleOpenModalTareaEdit(tarea)}  className={styles.btnCustom}><img src={editIcon} /></Button>
-            <Button variant='danger' onClick={handleDeleteTarea} className={styles.btnCustomDelete}> <img src={deleteIcon}  /></Button>
+            <Button onClick={() => handleOpenModalView(tarea)} style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }}  className={styles.btnCustom}><img src={viewIcon} width={"16px"} /></Button>
+            <Button  style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }} onClick={()=>handleOpenModalTareaEdit(tarea)}  className={styles.btnCustom}><img src={editIcon} width={"16px"} /></Button>
+            <Button variant='danger' onClick={handleDeleteTarea} className={styles.btnCustomDelete}> <img src={deleteIcon} width={"16px"} /></Button>
             </div>
             </div>
         </div>
