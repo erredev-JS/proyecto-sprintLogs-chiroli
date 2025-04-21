@@ -37,7 +37,7 @@ export const ModalCard = () => {
     
     
 
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const {name, value} = e.target;
         setFormValues((prev)=>({...prev, [`${name}`]:value,}))
     }
@@ -108,9 +108,10 @@ export const ModalCard = () => {
                     <form onSubmit={handleSubmit} className={styles.containerForm} action="">
                         <input type="text" name="titulo" id="" placeholder='Titulo' required value={formValues.titulo}
                         onChange={handleChange}/>
+
+                        <textarea name="descripcion" id="" placeholder='Descripcion' required value={formValues.descripcion}
+                        onChange={handleChange} />
                     
-                        <input type="text" name="descripcion" id="" placeholder='Descripcion' required value={formValues.descripcion}
-                        onChange={handleChange}/>
                         <label htmlFor="">Fecha Limite</label>
                         <input type="date" name="fechaLimite" id="" placeholder='Fecha Limite' required value={formValues.fechaLimite}
                         onChange={handleChange}/>
