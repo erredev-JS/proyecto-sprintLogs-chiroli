@@ -5,6 +5,7 @@ import useStoreSprints from '../../../store/useStoreSprints'
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import { ISprint } from '../../../types/iSprints'
 import { createSprintController, updateSprintController } from '../../../data/sprintController'
+import { bigSweetAlertPopup } from '../../../utils/bigSweetAlertPopup'
 
 
 const ModalSprint = () => {
@@ -62,6 +63,8 @@ const ModalSprint = () => {
             
         }else{
             updateSprintController(formValues)
+            bigSweetAlertPopup("Sprint actualizada")
+
             editSprint(formValues)
             
         }

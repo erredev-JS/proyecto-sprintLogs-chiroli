@@ -4,13 +4,15 @@ import { ITareas } from "../../../types/ITareas"
 import { FC } from "react"
 import { useStoreModal } from "../../../store/useStoreModal"
 import useStoreTareas from "../../../store/useStoreTareas"
-import Swal from "sweetalert2"
 import { createTareaController, deleteTareaController } from "../../../data/tareaController"
 import viewIcon from '../../../assets/viewIcon.svg'
 import editIcon from '../../../assets/editIcon.svg'
 import deleteIcon from '../../../assets/deleteIcon.svg'
 import { updateSprintController } from "../../../data/sprintController"
 import useStoreSprints from "../../../store/useStoreSprints"
+import { popUpSweetAlert } from "../../../utils/popUpSweetAlert"
+import { bigSweetAlertPopup } from "../../../utils/bigSweetAlertPopup"
+import Swal from "sweetalert2"
 
 
 
@@ -22,30 +24,9 @@ type CardTaskInSprint = {
 
 export const CardTaskInSprint: FC<CardTaskInSprint> = ({tarea, estado}) => {
 
-
- /*  const handleSendTask = async () => {
-          if(!sprintSeleccionada || !tareaActiva) return // Si no hay seleccionada una sprint o no hay tarea activa corta el handle
-  
-          const sprintUpdate = sprints.find((sprint) => sprint.id === sprintSeleccionada)
-  
-          if (!sprintUpdate) return 
-  
-          const newSprint = {
-              ...sprintUpdate, tareas: [...sprintUpdate.tareas, tareaActiva]
-          }
-  
-          await updateSprintController(newSprint)
-  
-          addTaskToSprint(tareaActiva, sprintSeleccionada) // Actualizo el estado
-          deleteTareaController(tareaActiva.id)
-          setTareaActiva(null)
-          
-          closeModalTaskSend()
-  
-*/
   const sprintActiva = useStoreSprints((state) => state.sprintActiva)
 
-  const {openModalTask, openModalViewTask, openModalTaskSend} = useStoreModal()
+  const {openModalTask, openModalViewTask } = useStoreModal()
 
   const {deleteTaskSprint} = useStoreSprints()
 
@@ -66,21 +47,50 @@ export const CardTaskInSprint: FC<CardTaskInSprint> = ({tarea, estado}) => {
 
 
   const handleDeleteTarea = async () => {
-    if (sprintActiva) {
-      // 1. Crear nueva lista de tareas
-      const tareasActualizadas = sprintActiva.tareas.filter(t => t.id !== tarea.id);
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger"
+      },
+      buttonsStyling: true
+    });
   
-      // 2. Crear nueva sprint actualizada
-      const nuevaSprint = { ...sprintActiva, tareas: tareasActualizadas };
+    const result = await swalWithBootstrapButtons.fire({
+      title: "¿Eliminar Tarea?",
+      text: "Esta acción no se puede revertir!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Sí, eliminar!",
+      cancelButtonText: "Cancelar",
+      reverseButtons: true
+    });
   
-      // 3. Enviar al backend
-      await updateSprintController(nuevaSprint);
+    if (result.isConfirmed) {
+      if (sprintActiva) {
+        try {
+          // 1. Nueva lista de tareas sin la que se quiere eliminar
+          const tareasActualizadas = sprintActiva.tareas.filter(t => t.id !== tarea.id);
   
-      // 4. Actualizar store
-      deleteTaskSprint(tarea.id, sprintActiva.id);
+          // 2. Nueva sprint actualizada
+          const nuevaSprint = { ...sprintActiva, tareas: tareasActualizadas };
+  
+          // 3. Backend
+          await updateSprintController(nuevaSprint);
+  
+          // 4. Estado local
+          deleteTaskSprint(tarea.id, sprintActiva.id);
+  
+          // 5. Alerta final (sin sombra gris, abajo derecha, customizada)
+          bigSweetAlertPopup("Tarea eliminada correctamente");
+        } catch (error) {
+          Swal.fire("Error", "No se pudo eliminar la tarea.", "error");
+        }
+      }
+    } else if (result.dismiss === Swal.DismissReason.cancel) {
+      Swal.fire("Cancelado", "La tarea no fue eliminada.", "info");
     }
   };
-
+  
   const handleSendTaskToBacklog = async () => {
     if (!sprintActiva) return;
     await deleteTaskSprint(tarea.id, sprintActiva.id);
@@ -92,6 +102,8 @@ export const CardTaskInSprint: FC<CardTaskInSprint> = ({tarea, estado}) => {
     await updateSprintController(sprintActualizada)
     addTareaInactiva(tarea)
     createTareaController(tarea)
+
+    popUpSweetAlert("Tarea enviada al Backlog", "La tarea está en el backlog ahora");
   }
 
   const cambiarEstadoTarea = async (direccion: number) => {
@@ -119,6 +131,7 @@ export const CardTaskInSprint: FC<CardTaskInSprint> = ({tarea, estado}) => {
     };
   
     await updateSprintController(nuevaSprint);
+    popUpSweetAlert("Estado cambiado", "El estado de la tarea ha sido cambiado");
     useStoreSprints.getState().editTaskSprint(tareaActualizada, sprintActiva.id);
   };
   
@@ -129,7 +142,7 @@ export const CardTaskInSprint: FC<CardTaskInSprint> = ({tarea, estado}) => {
             <div className={styles.cardInfo}>
             <p>Titulo: {tarea.titulo}</p>
             <p>Descripcion:</p>
-            <p>{tarea.descripcion}</p>
+            <p className={styles.descripcionText}>{tarea.descripcion}</p>
 
             </div>
             <div className={styles.buttonsResponsive}>
@@ -154,11 +167,11 @@ export const CardTaskInSprint: FC<CardTaskInSprint> = ({tarea, estado}) => {
   </button>
     </div>
             </div>
-            <Button style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white", width: "160px" }} onClick={handleSendTaskToBacklog} >Enviar al Backlog</Button>
+            <Button style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white", width: "120px", fontSize:"12px" }} onClick={handleSendTaskToBacklog} >Enviar al Backlog</Button>
             <div className={styles.cardButtons}>
-            <Button onClick={() => handleOpenModalView(tarea)} style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }}  className={styles.btnCustom}><img src={viewIcon} /></Button>
-            <Button  style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }} onClick={()=>handleOpenModalTareaEdit(tarea)}  className={styles.btnCustom}><img src={editIcon} /></Button>
-            <Button variant='danger' onClick={handleDeleteTarea} className={styles.btnCustomDelete}> <img src={deleteIcon}  /></Button>
+            <Button onClick={() => handleOpenModalView(tarea)} style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }}  className={styles.btnCustom}><img src={viewIcon} width={"16px"} /></Button>
+            <Button  style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }} onClick={()=>handleOpenModalTareaEdit(tarea)}  className={styles.btnCustom}><img src={editIcon} width={"16px"} /></Button>
+            <Button variant='danger' onClick={handleDeleteTarea} className={styles.btnCustomDelete}> <img src={deleteIcon} width={"16px"} /></Button>
             </div>
             </div>
         </div>

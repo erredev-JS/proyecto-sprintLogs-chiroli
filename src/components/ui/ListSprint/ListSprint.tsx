@@ -15,7 +15,7 @@ import { CardTaskInSprint } from "../CardTaskInSprint/CardTaskInSprint"
 
 export const ListSprint = () => {
 
-    const { idsprint } = useParams()
+    const { idsprint } = useParams<{idsprint: string}>()
     
     //con esto se adquiere el id del sprint seleccionado
     
@@ -25,17 +25,32 @@ export const ListSprint = () => {
     const {sprints, setSprintActiva, sprintActiva} = useStoreSprints()
     const {openModalTask} = useStoreModal()
     
+    //Ya no es necesario
+    // useEffect(() => {
+    //     if (!sprintActiva && sprints.length > 0) {
+    //         setSprintActiva(sprints[0]); 
+    //     }
+    // }, [sprints]); 
     
+    // useEffect(() => {
+    //     if(idsprint && sprints.length > 0){
+    //         const foundSprint = sprints.find((sprint) => sprint.id === idsprint)
+    //         if(foundSprint){
+    //             setSelectedSprint(foundSprint)
+    //         }
+    //     }
+
+    // }, [sprintActiva, idsprint]);
     useEffect(() => {
-        if (!sprintActiva && sprints.length > 0) {
-            setSprintActiva(sprints[0]); 
+        if (!idsprint || sprints.length === 0) return;
+    
+        const foundSprint = sprints.find(sprint => sprint.id === idsprint);
+    
+        if (foundSprint) {
+            setSelectedSprint(foundSprint);
+            setSprintActiva(foundSprint);
         }
-    }, [sprints]); 
-    
-    useEffect(() => {
-        const foundSprint = sprints.find((sprint) => sprint.id === idsprint)
-        setSelectedSprint(foundSprint)
-    }, [sprintActiva, idsprint]);
+    }, [idsprint, sprints]);
 
 
     const pendingTasks = selectedSprint?.tareas.filter(task => task.estado === 'pendiente') || []

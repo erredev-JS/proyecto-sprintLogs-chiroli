@@ -2,7 +2,6 @@ import axios from "axios"
 
 import { URL_SPRINTLIST } from "../utils/constantes"
 import { putSprintList } from "../http/crudSprints"
-import Swal from "sweetalert2"
 import { ISprint } from "../types/iSprints"
 
 
@@ -43,11 +42,7 @@ export const updateSprintController = async (nuevaSprint: ISprint) => {
 
         await putSprintList(result)
 
-        Swal.fire({
-            title: "Sprint actualizada!",
-            text: "",
-            icon: "success"
-        });
+        
 
         }
 

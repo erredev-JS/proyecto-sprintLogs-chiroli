@@ -1,32 +1,31 @@
 
 .taskCard{
     display: flex;
-    width: 300px;
+    width: 200px;
     margin: 0 auto;
-    justify-content: space-between;
-    padding: 10px;
     align-items: center;
-    height: 300px;
+    height: 260px;
     background-color: #D9D9D9;
     border-radius: 8px;
     margin-top: 10px;
     flex-direction: column;
+    font-size: 12px;
     padding: 20px;
    
 }
 .buttonsResponsive{
   display: flex;
-  width: 100%;
   flex-direction: column;
   gap: 10px;
   margin: 0 auto;
 
+  width: 100%;
   align-items: center;
 }
 
 .cardButtons{
-   
-    width: 80%;
+
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
@@ -40,43 +39,27 @@
   .estadoTexto {
     font-weight: bold;
     text-transform: capitalize;
+    font-size: 12px;
   }
   
   
 .cardInfo p{
   overflow-x: auto;
   overflow-y: auto;
-  width: 100px;
+  width: 150px; 
 }
 
-@media (max-width: 850px) {
-    .taskCard{
-        flex-direction: column;
-        width: 300px;
-    }
-    .buttonsResponsive{
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        gap: 10px;
-        margin: 0 auto;
-    }
+.descripcionText{
+  max-height: 30px;
 
-    .cardButtons{
-       width: 70%;
-    }
-    .btnCustom:first-child{
-        width:60px;
-        font-size: 10px;
-    }
-  }
-  
+  overflow-y: auto;
+}
 
-  .btnCustom:hover{
+.btnCustom:hover{
     background-color:  #3d3877!important;
     scale: 1.1;
     outline: 2px solid #6B63D4 !important;
-  
+    
   }
 
   .btnCustomDelete:hover{
@@ -84,44 +67,69 @@
     scale: 1.1;
     outline: 2px solid red !important;
     background-color: #d46363 !important ;
-  
+    
   }
 
-
+  
   .buttonState{
     display: flex;
     background-color: #6B63D4;
     
     color: white;
-   
-    width: 160px;
+    
+    width: 120px;
     justify-content: space-between;
     border-radius: 8px;
     align-items: center;
   }
-
+  
   .btnInState{
     font-size: 18px;
     background-color: hsl(244, 27%, 42%);
     border: none;
-   padding: 5px;
-   
+    padding: 2px;
+    
   }
 
   .btnInState:first-child{
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
   }
-
+  
   .btnInState:last-child{
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
   }
-
+  
   button:active {
     background-color: inherit;
     transform: none;
     box-shadow: none;
   }
   
-
+  
+  
+  
+  @media (max-width: 1000px) {
+      .taskCard{
+          flex-direction: column;
+          width: 200px;
+          padding: 10px 0;
+      }
+      .buttonsResponsive{
+          display: flex;
+          width: 100%;
+          flex-direction: column;
+          gap: 10px;
+          margin: 0 auto;
+      }
+  
+      .cardButtons{
+         width: 70%;
+      }
+      .btnCustom:first-child{
+          width:60px;
+          font-size: 10px;
+      }
+    }
+    
