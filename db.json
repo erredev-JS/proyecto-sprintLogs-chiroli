@@ -28,13 +28,6 @@
         "descripcion": "Pizza pepperoni",
         "estado": "pendiente",
         "fechaLimite": "2025-04-30"
-      },
-      {
-        "id": "1745106890184",
-        "titulo": "Bendito Tarea rufian Sprint",
-        "descripcion": "32",
-        "estado": "pendiente",
-        "fechaLimite": "2025-04-08"
       }
     ]
   },
