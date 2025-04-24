@@ -133,7 +133,6 @@ export const CardTaskInSprint: FC<CardTaskInSprint> = ({tarea}) => {
     };
   
     await updateSprintController(nuevaSprint);
-    popUpSweetAlert("Estado cambiado", "El estado de la tarea ha sido cambiado");
     useStoreSprints.getState().editTaskSprint(tareaActualizada, sprintActiva.id);
   };
   
