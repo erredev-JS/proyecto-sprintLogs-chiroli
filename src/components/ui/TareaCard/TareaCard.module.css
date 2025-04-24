@@ -12,7 +12,15 @@
     margin-top: 10px;
   
 }
+.deadlineClose {
+    border-left: 6px solid red;
+  }
 
+
+.vencida {
+    border-left: 6px solid darkred;
+    opacity: 0.5;
+  }
 .buttonsResponsive{
     display: flex;
     justify-content: space-around;
@@ -64,3 +72,4 @@
     background-color: #d46363 !important ;
   
   }
+

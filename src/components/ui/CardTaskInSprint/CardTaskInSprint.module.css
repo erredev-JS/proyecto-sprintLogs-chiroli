@@ -13,6 +13,17 @@
     padding: 20px;
    
 }
+
+.deadlineClose {
+  border-left: 6px solid red;
+}
+
+
+.vencida {
+  border-left: 6px solid darkred;
+  opacity: 0.5;
+}
+
 .buttonsResponsive{
   display: flex;
   flex-direction: column;

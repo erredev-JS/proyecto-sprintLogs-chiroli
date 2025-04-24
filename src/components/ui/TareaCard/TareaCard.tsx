@@ -9,7 +9,8 @@ import { deleteTareaController } from "../../../data/tareaController"
 import viewIcon from '../../../assets/viewIcon.svg'
 import editIcon from '../../../assets/editIcon.svg'
 import deleteIcon from '../../../assets/deleteIcon.svg'
-
+import { isDeadlinePassed } from "../../../utils/isDeadLinePassed"
+import { isDeadlineClose } from "../../../utils/isDeadlineClose"
 
 
 type ITareaCard = {
@@ -25,7 +26,6 @@ export const TareaCard: FC<ITareaCard> = ({tarea}) => {
   const setTareaActiva = useStoreTareas((state) => state.setTareaActiva)
 
 
-  
   const handleOpenModalTareaEdit = (tarea: ITareas)=> {
     setTareaActiva(tarea)
     openModalTask()
@@ -41,64 +41,62 @@ export const TareaCard: FC<ITareaCard> = ({tarea}) => {
     openModalTaskSend()
   }
 
-
+  // Funcion que elimina la tarea
   const handleDeleteTarea = () => {
     const swalWithBootstrapButtons = Swal.mixin({
-  customClass: {
-    confirmButton: "btn btn-success",
-    cancelButton: "btn btn-danger"
-  },
-  buttonsStyling: true
-});
-swalWithBootstrapButtons.fire({
-  title: "¿Eliminar Tarea?",
-  text: "Esta accion no se puede revertir!",
-  icon: "warning",
-  showCancelButton: true,
-  confirmButtonText: "Si, eliminar!",
-  cancelButtonText: "Cancelar",
-  reverseButtons: true
-}).then((result) => {
-  if (result.isConfirmed) {
-    swalWithBootstrapButtons.fire({
-      
-      title: "Borrada!",
-      text: "La tarea ha sido eliminada.",
-      icon: "success"
+      customClass: {
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger"
+      },
+      buttonsStyling: true
     });
-    deleteTareaController(tarea.id)
-    deleteTarea(tarea.id)
-  } else if (
+    swalWithBootstrapButtons.fire({
+      title: "¿Eliminar Tarea?",
+      text: "Esta accion no se puede revertir!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Si, eliminar!",
+      cancelButtonText: "Cancelar",
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        swalWithBootstrapButtons.fire({
+          title: "Borrada!",
+          text: "La tarea ha sido eliminada.",
+          icon: "success"
+        });
+      deleteTareaController(tarea.id)
+      deleteTarea(tarea.id)
+    }else if (
     /* Read more about handling dismissals below */
-    result.dismiss === Swal.DismissReason.cancel
-  ) {
+      result.dismiss === Swal.DismissReason.cancel
+    ){
     swalWithBootstrapButtons.fire({
       title: "Cancelado",
       text: ``,
       icon: "error"
     });
-  }
-});
+    }
+    });
   }
 
   return (
     <>
-        <div className={styles.taskCard}>
+        <div className={`${styles.taskCard} ${isDeadlinePassed(tarea) ? styles.vencida : isDeadlineClose(tarea) ? styles.deadlineClose : ''}`}>
             <div className={styles.cardInfo}>
-            <p>Titulo: {tarea.titulo}</p>
-            <p>Descripcion: {tarea.descripcion}</p>
+              <p>Titulo: {tarea.titulo}</p>
+              <p>Descripcion: {tarea.descripcion}</p>
 
             </div>
-            <div className={styles.buttonsResponsive}>
-
-            <div className={styles.cardSend}>
-            <Button onClick={() => handleOpenModalSendTask(tarea)}  style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }} className={styles.btnCustom}>Enviar a 🏁</Button>
-            </div>
-            <div className={styles.cardButtons}>
-            <Button onClick={() => handleOpenModalView(tarea)} style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }}  className={styles.btnCustom}><img src={viewIcon} /></Button>
-            <Button  style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }} onClick={()=>handleOpenModalTareaEdit(tarea)}  className={styles.btnCustom}><img src={editIcon} /></Button>
-            <Button variant='danger' onClick={handleDeleteTarea} className={styles.btnCustomDelete}> <img src={deleteIcon}  /></Button>
-            </div>
+              <div className={styles.buttonsResponsive}>
+                <div className={styles.cardSend}>
+                  <Button onClick={() => handleOpenModalSendTask(tarea)}  style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }} className={styles.btnCustom}>Enviar a 🏁</Button>
+                </div>
+              <div className={styles.cardButtons}>
+                <Button onClick={() => handleOpenModalView(tarea)} style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }}  className={styles.btnCustom}><img src={viewIcon} /></Button>
+                <Button  style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white" }} onClick={()=>handleOpenModalTareaEdit(tarea)}  className={styles.btnCustom}><img src={editIcon} /></Button>
+                <Button variant='danger' onClick={handleDeleteTarea} className={styles.btnCustomDelete}> <img src={deleteIcon}  /></Button>
+              </div>
             </div>
         </div>
     

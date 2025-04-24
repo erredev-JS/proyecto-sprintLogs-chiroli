@@ -2,20 +2,6 @@
   "backlog": {
     "tareas": [
       {
-        "id": "1744583708804",
-        "titulo": "aaaaaaaaaa",
-        "descripcion": "2222222222",
-        "estado": "en_progreso",
-        "fechaLimite": ""
-      },
-      {
-        "id": "1744718418756",
-        "titulo": "pijota",
-        "descripcion": "",
-        "estado": "pendiente",
-        "fechaLimite": ""
-      },
-      {
         "id": "1744721465851",
         "titulo": "Tarea Moski 2",
         "descripcion": " :O",
@@ -27,7 +13,25 @@
         "titulo": "Llegaron las Pipshash",
         "descripcion": "Pizza pepperoni",
         "estado": "pendiente",
+<<<<<<< HEAD
         "fechaLimite": "2025-04-30"
+=======
+        "fechaLimite": "2025-04-28"
+      },
+      {
+        "id": "50699dec-3d1a-45ff-a94d-82d416eac053",
+        "titulo": "Tarea 2",
+        "descripcion": "Estamos aca",
+        "estado": "en_progreso",
+        "fechaLimite": "2025-03-06"
+      },
+      {
+        "id": "1745330877512",
+        "titulo": "Tarea creada en jkshfaj",
+        "descripcion": "Pizza pepperoni",
+        "estado": "pendiente",
+        "fechaLimite": "2025-04-05"
+>>>>>>> eaad3a78a2c662aa03ed07de6db85b8d9763ef92
       }
     ]
   },
@@ -40,20 +44,6 @@
         "nombre": "Sprint 121",
         "tareas": [
           {
-            "id": "50699dec-3d1a-45ff-a94d-82d416eac053",
-            "titulo": "Tarea 2",
-            "descripcion": "Estamos aca",
-            "estado": "pendiente",
-            "fechaLimite": "2025-03-06"
-          },
-          {
-            "id": "1744718685625",
-            "titulo": "a",
-            "descripcion": "",
-            "estado": "pendiente",
-            "fechaLimite": ""
-          },
-          {
             "id": "1743722650122",
             "titulo": "aaaaaaaa",
             "descripcion": "aaaaaaaaaaaaaaa",
@@ -63,29 +53,15 @@
           {
             "id": "1744504284192",
             "titulo": "rik ifort",
-            "descripcion": "",
-            "estado": "finalizada",
-            "fechaLimite": "2025-04-06"
-          },
-          {
-            "id": "1745115625800",
-            "titulo": "estamos",
-            "descripcion": "estamos acaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "descripcion": "a",
             "estado": "pendiente",
-            "fechaLimite": "2025-04-26"
-          },
-          {
-            "id": "1745115780915",
-            "titulo": "aa",
-            "descripcion": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-            "estado": "pendiente",
-            "fechaLimite": "2025-05-02"
+            "fechaLimite": "2025-04-25"
           },
           {
             "id": "1745115806698",
             "titulo": "aaaaaaaaa",
             "descripcion": "esta,ps acaaaaaaaaaaa",
-            "estado": "pendiente",
+            "estado": "finalizada",
             "fechaLimite": "2025-05-02"
           }
         ]
@@ -102,7 +78,15 @@
         "fechaInicio": "2025-04-03",
         "fechaCierre": "2025-04-18",
         "nombre": "BENDITO RUFIAN",
-        "tareas": []
+        "tareas": [
+          {
+            "id": "1745106890184",
+            "titulo": "Bendito Tarea rufian Sprint",
+            "descripcion": "32",
+            "estado": "pendiente",
+            "fechaLimite": "2025-04-08"
+          }
+        ]
       }
     ]
   }
