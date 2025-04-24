@@ -3,18 +3,11 @@ import useStoreTareas from '../../../store/useStoreTareas'
 import styles from './ModalViewCard.module.css'
 import { useStoreModal } from '../../../store/useStoreModal'
 
-
-
-// interface IModalViewCard{
-//     tarea : ITareas 
-// }
-
 export const ModalViewCard = () => {
     const {tareaActiva, setTareaActiva} = useStoreTareas()
     const {closeModalViewTask} = useStoreModal()
 
-   
-
+    
     const handleCloseModalView = () => {
         setTareaActiva(null)
         closeModalViewTask()

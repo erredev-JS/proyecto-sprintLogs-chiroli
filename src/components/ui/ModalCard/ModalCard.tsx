@@ -25,31 +25,35 @@ export const ModalCard = () => {
     const {closeModalTask} = useStoreModal()
     const [formValues, setFormValues] = useState<ITareas>(initialStateTarea);
 
+
     useEffect(()=> {
         if(tareaActiva){
-            setFormValues({...tareaActiva})
+            setFormValues({...tareaActiva}) // Copia valores de la tarea activa si la hay
         }else {
-            setFormValues(initialStateTarea); 
+            setFormValues(initialStateTarea);  // Inicia con valores default
         }
     }, [tareaActiva])
 
     
     
     
-
+    // Funcion que maneja el cambio del form
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const {name, value} = e.target;
         setFormValues((prev)=>({...prev, [`${name}`]:value,}))
     }
 
+    // Funcion que cierra el modal 
     const handleCloseModalTask = () => {
         setTareaActiva(null)
         closeModalTask()
     }
 
+    // Funcion que crea la tarea
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
 
+        // Si no hay Sprint activa la crea en el backlog
         if(!sprintActiva){
             if(!tareaActiva){
                 formValues.id = Date.now().toString()
@@ -63,6 +67,8 @@ export const ModalCard = () => {
                 bigSweetAlertPopup("Tarea actualizada")
 
             }
+
+        // Si hay sprint activa la crea dentro de ella
         }else{
             if(!tareaActiva){
                 console.log("Creando tarea en Sprint activa", sprintActiva.nombre)
@@ -79,6 +85,7 @@ export const ModalCard = () => {
 
                 }
 
+            // Si hay tarea activa la actualiza 
             }else{
                 editTaskSprint(formValues, sprintActiva.id)
                 const sprintActualizado = useStoreSprints.getState().sprints.find(s => s.id === sprintActiva.id)
@@ -109,7 +116,7 @@ export const ModalCard = () => {
                         <input type="text" name="titulo" id="" placeholder='Titulo' required value={formValues.titulo}
                         onChange={handleChange}/>
 
-                        <textarea name="descripcion" id="" placeholder='Descripcion' required value={formValues.descripcion}
+                        <textarea name="descripcion" id="" placeholder='Descripcion' value={formValues.descripcion}
                         onChange={handleChange} />
                     
                         <label htmlFor="">Fecha Limite</label>

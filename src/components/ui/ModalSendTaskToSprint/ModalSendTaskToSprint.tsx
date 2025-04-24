@@ -8,10 +8,6 @@ import { updateSprintController } from '../../../data/sprintController'
 import { deleteTareaController } from '../../../data/tareaController'
 import { bigSweetAlertPopup } from '../../../utils/bigSweetAlertPopup'
 
-// interface IModalSendTaskToSprint {
-//     tarea : ITareas
-// }
-
 
 export const ModalSendTaskToSprint  = () => {
 
@@ -25,6 +21,7 @@ export const ModalSendTaskToSprint  = () => {
         closeModalTaskSend()
     }
 
+    // Funcion que manda la tarea a una Sprint
     const handleSendTask = async () => {
         if(!sprintSeleccionada || !tareaActiva) return // Si no hay seleccionada una sprint o no hay tarea activa corta el handle
 
@@ -33,7 +30,7 @@ export const ModalSendTaskToSprint  = () => {
         if (!sprintUpdate) return 
 
         const newSprint = {
-            ...sprintUpdate, tareas: [...sprintUpdate.tareas, tareaActiva]
+            ...sprintUpdate, tareas: [...sprintUpdate.tareas, tareaActiva] // Agrego tarea a la sprint que coincide con sprintseleccionada
         }
 
         await updateSprintController(newSprint)
@@ -56,6 +53,7 @@ export const ModalSendTaskToSprint  = () => {
             <div className={styles.containerListSprints}>
                 <h5>Sprints</h5>
                 {sprints.map((sprint) => (
+                    // Mapea las sprints
                     <div key={sprint.id} onClick={() => setSprintSeleccionada(sprint.id)} className={`${styles.containerSprints} ${sprintSeleccionada === sprint.id ? styles.sprintactive : ''}`}>
                         {sprint.nombre}
                     </div>

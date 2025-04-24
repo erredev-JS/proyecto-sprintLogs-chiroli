@@ -34,6 +34,7 @@ const ModalSprint = () => {
     }, [sprintActiva]);
     
 
+    // Funcion que maneja cambio
     const handleChange =(e : ChangeEvent<HTMLInputElement>) => {
         const {name, value} = e.target
         setFormValues((prev) => ({...prev, [`${name}`] : value}))
@@ -48,20 +49,19 @@ const ModalSprint = () => {
         }
     
         closeModalSprint()
-        // setTimeout(()=> {
-        //     window.location.reload()
-        // }, 500)
+    
     }
 
+    // Funcion que crea sprint
     const handleSubmit = (e : FormEvent) => {
         e.preventDefault()
 
-        if(!sprintActiva){
+        if(!sprintActiva){ // Si no hay activa la crea 
             formValues.id = Date.now().toString()
             createSprintController(formValues)
             addSprint(formValues)
             
-        }else{
+        }else{ // Si hay sprintActiva la actualiza
             updateSprintController(formValues)
             bigSweetAlertPopup("Sprint actualizada")
 

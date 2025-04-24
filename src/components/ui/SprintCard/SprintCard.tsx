@@ -23,44 +23,49 @@ export const SprintCard: FC<ISprintCard> = ({sprintIn}) => {
 
 
     const navigate = useNavigate();
+
+    // Funcion que cambia de Screen
     const handleClick = () => {
       setSprintActiva(sprintIn)
       navigate(`/sprintScreen/${sprintIn.id}`);
     };
 
+   
     const handleOpenModalSprintEdit = () => {
       setSprintActiva(sprintIn)
       openModalSprint()
     }
 
+    // Funcion que elimina la sprint
     const handleDeleteSprint = () => {
         const swalWithBootstrapButtons = Swal.mixin({
-      customClass: {
-        confirmButton: "btn btn-success",
-        cancelButton: "btn btn-danger"
-      },
-      buttonsStyling: true
-    });
-    swalWithBootstrapButtons.fire({
-      title: "¿Eliminar Sprint?",
-      text: "Esta accion no se puede revertir!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonText: "Si, eliminar!",
-      cancelButtonText: "Cancelar",
-      reverseButtons: true
-    }).then((result) => {
-      if (result.isConfirmed) {
-        swalWithBootstrapButtons.fire({
-          
-          title: "Borrada!",
-          text: "La tarea ha sido eliminada.",
-          icon: "success"
+          customClass: {
+            confirmButton: "btn btn-success",
+            cancelButton: "btn btn-danger"
+          },
+
+          buttonsStyling: true
         });
-        eliminateSprintController(sprintIn.id)
-        deleteSprint(sprintIn.id)
+        swalWithBootstrapButtons.fire({
+          title: "¿Eliminar Sprint?",
+          text: "Esta accion no se puede revertir!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonText: "Si, eliminar!",
+          cancelButtonText: "Cancelar",
+          reverseButtons: true
+        }).then((result) => {
+          if (result.isConfirmed) {
+            swalWithBootstrapButtons.fire({
+          
+            title: "Borrada!",
+            text: "La tarea ha sido eliminada.",
+            icon: "success"
+          });
+          eliminateSprintController(sprintIn.id) // Elimino sprint
+          deleteSprint(sprintIn.id) // Actualizo el estado
       } else if (
-        /* Read more about handling dismissals below */
+        
         result.dismiss === Swal.DismissReason.cancel
       ) {
         swalWithBootstrapButtons.fire({
@@ -68,9 +73,9 @@ export const SprintCard: FC<ISprintCard> = ({sprintIn}) => {
           text: ``,
           icon: "error"
         });
-      }
-    });
-      }
+        }
+      });
+    }
 
   return (
 

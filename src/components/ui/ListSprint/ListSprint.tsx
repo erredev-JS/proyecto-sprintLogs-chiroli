@@ -19,28 +19,11 @@ export const ListSprint = () => {
     
     //con esto se adquiere el id del sprint seleccionado
     
-
     const [selectedSprint, setSelectedSprint] = useState<ISprint>()
 
-    const {sprints, setSprintActiva, sprintActiva} = useStoreSprints()
+    const {sprints, setSprintActiva} = useStoreSprints()
     const {openModalTask} = useStoreModal()
     
-    //Ya no es necesario
-    // useEffect(() => {
-    //     if (!sprintActiva && sprints.length > 0) {
-    //         setSprintActiva(sprints[0]); 
-    //     }
-    // }, [sprints]); 
-    
-    // useEffect(() => {
-    //     if(idsprint && sprints.length > 0){
-    //         const foundSprint = sprints.find((sprint) => sprint.id === idsprint)
-    //         if(foundSprint){
-    //             setSelectedSprint(foundSprint)
-    //         }
-    //     }
-
-    // }, [sprintActiva, idsprint]);
     useEffect(() => {
         if (!idsprint || sprints.length === 0) return;
     
@@ -53,6 +36,7 @@ export const ListSprint = () => {
     }, [idsprint, sprints]);
 
 
+    // Arrays con las tareas dependiendo su estado
     const pendingTasks = selectedSprint?.tareas.filter(task => task.estado === 'pendiente') || []
     const inProgress = selectedSprint?.tareas.filter(task => task.estado === 'en_progreso') || []
     const completed = selectedSprint?.tareas.filter(task => task.estado === 'finalizada') || []
@@ -74,13 +58,10 @@ export const ListSprint = () => {
                     <h6>Tareas Pendientes : {pendingTasks.length}</h6>
                     <div className={styles.containerTasks}>                       
                     {selectedSprint?.tareas.map(task => (
-                            task.estado === 'pendiente' &&
+                            task.estado === 'pendiente' && //Renderiza tareas pendientes
                             <div className={styles.listContainer}>
-    
-                             <CardTaskInSprint key={task.id} tarea={task} estado="pendiente" />
-      
-
-    </div>
+                                <CardTaskInSprint key={task.id} tarea={task} estado="pendiente" />
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -90,7 +71,7 @@ export const ListSprint = () => {
                     <h6>Tareas en Progreso : {inProgress.length}</h6>
                     <div className={styles.containerTasks}>
                     {selectedSprint?.tareas.map(task => (
-                            task.estado === 'en_progreso' &&
+                            task.estado === 'en_progreso' && //Renderiza tareas en progreso
                             <CardTaskInSprint key={task.id} tarea={task} estado="en_progreso" />
                         ))}
                     </div>
@@ -100,7 +81,7 @@ export const ListSprint = () => {
                     <h6>Tareas Finalizadas : {completed.length}</h6>
                     <div className={styles.containerTasks}>
                         {selectedSprint?.tareas.map(task => (
-                            task.estado === 'finalizada' &&
+                            task.estado === 'finalizada' && //Renderiza tareas finalizadas
                             <CardTaskInSprint key={task.id} tarea={task} estado="finalizada" />
                         ))}
                     </div>  

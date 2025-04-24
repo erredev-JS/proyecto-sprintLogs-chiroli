@@ -25,10 +25,12 @@ export const TareaCard: FC<ITareaCard> = ({tarea}) => {
   const setTareaActiva = useStoreTareas((state) => state.setTareaActiva)
 
 
+  
   const handleOpenModalTareaEdit = (tarea: ITareas)=> {
     setTareaActiva(tarea)
     openModalTask()
   }
+  
   const handleOpenModalView = (tarea: ITareas)=> {
     setTareaActiva(tarea)
     openModalViewTask()
