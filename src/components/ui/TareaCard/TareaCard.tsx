@@ -9,6 +9,8 @@ import { deleteTareaController } from "../../../data/tareaController"
 import viewIcon from '../../../assets/viewIcon.svg'
 import editIcon from '../../../assets/editIcon.svg'
 import deleteIcon from '../../../assets/deleteIcon.svg'
+import { isDeadlinePassed } from "../../../utils/isDeadLinePassed"
+import { isDeadlineClose } from "../../../utils/isDeadlineClose"
 
 
 
@@ -23,6 +25,9 @@ export const TareaCard: FC<ITareaCard> = ({tarea}) => {
   const {deleteTarea} = useStoreTareas()
 
   const setTareaActiva = useStoreTareas((state) => state.setTareaActiva)
+
+
+
 
 
   const handleOpenModalTareaEdit = (tarea: ITareas)=> {
@@ -81,7 +86,7 @@ swalWithBootstrapButtons.fire({
 
   return (
     <>
-        <div className={styles.taskCard}>
+        <div className={`${styles.taskCard} ${isDeadlinePassed(tarea) ? styles.vencida : isDeadlineClose(tarea) ? styles.deadlineClose : ''}`}>
             <div className={styles.cardInfo}>
             <p>Titulo: {tarea.titulo}</p>
             <p>Descripcion: {tarea.descripcion}</p>

@@ -4,7 +4,7 @@ import { ITareas } from "../../../types/ITareas"
 import { FC } from "react"
 import { useStoreModal } from "../../../store/useStoreModal"
 import useStoreTareas from "../../../store/useStoreTareas"
-import { createTareaController, deleteTareaController } from "../../../data/tareaController"
+import { createTareaController } from "../../../data/tareaController"
 import viewIcon from '../../../assets/viewIcon.svg'
 import editIcon from '../../../assets/editIcon.svg'
 import deleteIcon from '../../../assets/deleteIcon.svg'
@@ -13,6 +13,8 @@ import useStoreSprints from "../../../store/useStoreSprints"
 import { popUpSweetAlert } from "../../../utils/popUpSweetAlert"
 import { bigSweetAlertPopup } from "../../../utils/bigSweetAlertPopup"
 import Swal from "sweetalert2"
+import { isDeadlinePassed } from "../../../utils/isDeadLinePassed"
+import { isDeadlineClose } from "../../../utils/isDeadlineClose"
 
 
 
@@ -22,7 +24,7 @@ type CardTaskInSprint = {
     estado: string
 }
 
-export const CardTaskInSprint: FC<CardTaskInSprint> = ({tarea, estado}) => {
+export const CardTaskInSprint: FC<CardTaskInSprint> = ({tarea}) => {
 
   const sprintActiva = useStoreSprints((state) => state.sprintActiva)
 
@@ -138,7 +140,7 @@ export const CardTaskInSprint: FC<CardTaskInSprint> = ({tarea, estado}) => {
 
   return (
     <>
-        <div className={styles.taskCard}>
+        <div className={`${styles.taskCard} ${isDeadlinePassed(tarea) ? styles.vencida : isDeadlineClose(tarea) ? styles.deadlineClose : ''}`}>
             <div className={styles.cardInfo}>
             <p>Titulo: {tarea.titulo}</p>
             <p>Descripcion:</p>
