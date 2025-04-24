@@ -7,3 +7,7 @@
     display: flex;
     align-items: center;
 }
+
+.containerHeader h1{
+    cursor: pointer;
+}

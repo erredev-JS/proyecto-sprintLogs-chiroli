@@ -3,6 +3,7 @@ import styles from './Header.module.css'
 
 
 export const Header = () => {
+  // Importaciones React-router
   const navigate = useNavigate();
   const handleClick = () => {
     navigate("/");

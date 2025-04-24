@@ -12,7 +12,8 @@ import useStoreTareas from '../../../store/useStoreTareas';
 export const ListBacklog = () => {
   const {openModalTask} = useStoreModal()
 
-  //aqui se deberia setear el array de tareas en los estado globales
+  // Aca se deberia setear el array de tareas en los estado globales
+  
   const setTareas = useStoreTareas((state) => state.setTareas)
 
   const {tareas} = useStoreTareas()

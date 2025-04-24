@@ -36,7 +36,7 @@ export const ListSprint = () => {
     }, [idsprint, sprints]);
 
 
-    // Arrays con las tareas dependiendo su estado
+    // Arrays con las tareas mapeando dependiendo su estado
     const pendingTasks = selectedSprint?.tareas.filter(task => task.estado === 'pendiente') || []
     const inProgress = selectedSprint?.tareas.filter(task => task.estado === 'en_progreso') || []
     const completed = selectedSprint?.tareas.filter(task => task.estado === 'finalizada') || []

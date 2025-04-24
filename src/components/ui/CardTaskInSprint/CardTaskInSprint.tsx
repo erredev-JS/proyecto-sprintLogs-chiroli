@@ -151,6 +151,8 @@ export const CardTaskInSprint: FC<CardTaskInSprint> = ({tarea}) => {
             <div className={styles.cardSend}>
             <div className={styles.buttonState}>
 
+          // Button para cambiar el estado de la tarea
+
             <button
            className={styles.btnInState}
            onClick={() => cambiarEstadoTarea(-1)}
@@ -158,14 +160,16 @@ export const CardTaskInSprint: FC<CardTaskInSprint> = ({tarea}) => {
            >
            ⬅️
           </button>
-  <span className={styles.estadoTexto}>{tarea.estado}</span>
-  <button
-    className={styles.btnInState}
-    onClick={() => cambiarEstadoTarea(1)}
-    disabled={tarea.estado === "finalizada"}
-    >
-    ➡️
-  </button>
+          <span className={styles.estadoTexto}>{tarea.estado}</span>
+          <button
+            className={styles.btnInState}
+            onClick={() => cambiarEstadoTarea(1)}
+            disabled={tarea.estado === "finalizada"}
+            >
+            ➡️
+          </button>
+
+          
     </div>
             </div>
             <Button style={{ backgroundColor: "#6B63D4", border: "none", outline: "none", color: "white", width: "120px", fontSize:"12px" }} onClick={handleSendTaskToBacklog} >Enviar al Backlog</Button>
